@@ -80,22 +80,22 @@
    <widget class="QWidget" name="pageContainer" native="true">
     <property name="geometry">
      <rect>
-      <x>170</x>
-      <y>100</y>
-      <width>351</width>
-      <height>221</height>
+      <x>10</x>
+      <y>10</y>
+      <width>700</width>
+      <height>450</height>
      </rect>
     </property>
     <property name="autoFillBackground">
-     <bool>false</bool>
+     <bool>true</bool>
     </property>
     <widget class="QWidget" name="verticalLayoutWidget">
      <property name="geometry">
       <rect>
        <x>-1</x>
        <y>-1</y>
-       <width>351</width>
-       <height>221</height>
+       <width>701</width>
+       <height>451</height>
       </rect>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout"/>

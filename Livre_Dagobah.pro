@@ -29,3 +29,6 @@ FORMS    += mainwindow.ui \
     titlepage.ui \
     endpage.ui \
     luketrainpage.ui
+
+RESOURCES += \
+    images.qrc

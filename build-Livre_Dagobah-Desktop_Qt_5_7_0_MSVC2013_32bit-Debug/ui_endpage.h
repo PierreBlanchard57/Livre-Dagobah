@@ -19,7 +19,7 @@
 
 QT_BEGIN_NAMESPACE
 
-class endpage
+class endPage
 {
 public:
     QLabel *label;
@@ -28,10 +28,10 @@ public:
     {
         if (Form->objectName().isEmpty())
             Form->setObjectName(QStringLiteral("Form"));
-        Form->resize(400, 300);
+        Form->resize(700, 450);
         label = new QLabel(Form);
         label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(80, 60, 201, 151));
+        label->setGeometry(QRect(240, 160, 201, 151));
         QFont font;
         font.setPointSize(72);
         font.setBold(true);
@@ -52,7 +52,7 @@ public:
 };
 
 namespace Ui {
-    class EndPage: public endpage {};
+    class EndPage: public endPage {};
 } // namespace Ui
 
 QT_END_NAMESPACE

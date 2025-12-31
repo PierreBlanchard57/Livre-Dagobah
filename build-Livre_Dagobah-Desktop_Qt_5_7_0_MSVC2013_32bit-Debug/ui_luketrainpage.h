@@ -14,24 +14,46 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QHeaderView>
+#include <QtWidgets/QLabel>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
 
-class luketrain
+class lukeTrainPage
 {
 public:
+    QWidget *verticalLayoutWidget;
+    QVBoxLayout *verticalLayout;
+    QLabel *label;
     QPushButton *unlock;
 
     void setupUi(QWidget *Form)
     {
         if (Form->objectName().isEmpty())
             Form->setObjectName(QStringLiteral("Form"));
-        Form->resize(400, 300);
-        unlock = new QPushButton(Form);
+        Form->resize(700, 450);
+        verticalLayoutWidget = new QWidget(Form);
+        verticalLayoutWidget->setObjectName(QStringLiteral("verticalLayoutWidget"));
+        verticalLayoutWidget->setGeometry(QRect(0, -10, 701, 461));
+        verticalLayout = new QVBoxLayout(verticalLayoutWidget);
+        verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
+        verticalLayout->setContentsMargins(0, 0, 0, 0);
+        label = new QLabel(verticalLayoutWidget);
+        label->setObjectName(QStringLiteral("label"));
+        label->setEnabled(true);
+        label->setMinimumSize(QSize(150, 150));
+        label->setPixmap(QPixmap(QString::fromUtf8(":/training.png")));
+        label->setScaledContents(true);
+
+        verticalLayout->addWidget(label);
+
+        unlock = new QPushButton(verticalLayoutWidget);
         unlock->setObjectName(QStringLiteral("unlock"));
-        unlock->setGeometry(QRect(150, 140, 75, 23));
+
+        verticalLayout->addWidget(unlock);
+
 
         retranslateUi(Form);
 
@@ -41,13 +63,14 @@ public:
     void retranslateUi(QWidget *Form)
     {
         Form->setWindowTitle(QApplication::translate("Form", "Form", 0));
-        unlock->setText(QApplication::translate("Form", "unlock", 0));
+        label->setText(QString());
+        unlock->setText(QApplication::translate("Form", "test", 0));
     } // retranslateUi
 
 };
 
 namespace Ui {
-    class LukeTrainPage: public luketrain {};
+    class LukeTrainPage: public lukeTrainPage {};
 } // namespace Ui
 
 QT_END_NAMESPACE

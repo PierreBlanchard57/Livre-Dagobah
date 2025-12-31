@@ -69,11 +69,11 @@ public:
         prevButton->setFont(font1);
         pageContainer = new QWidget(centralWidget);
         pageContainer->setObjectName(QStringLiteral("pageContainer"));
-        pageContainer->setGeometry(QRect(170, 100, 351, 221));
-        pageContainer->setAutoFillBackground(false);
+        pageContainer->setGeometry(QRect(10, 10, 700, 450));
+        pageContainer->setAutoFillBackground(true);
         verticalLayoutWidget = new QWidget(pageContainer);
         verticalLayoutWidget->setObjectName(QStringLiteral("verticalLayoutWidget"));
-        verticalLayoutWidget->setGeometry(QRect(-1, -1, 351, 221));
+        verticalLayoutWidget->setGeometry(QRect(-1, -1, 701, 451));
         verticalLayout = new QVBoxLayout(verticalLayoutWidget);
         verticalLayout->setSpacing(6);
         verticalLayout->setContentsMargins(11, 11, 11, 11);

@@ -19,7 +19,7 @@
 
 QT_BEGIN_NAMESPACE
 
-class Ui_title
+class Ui_TitlePage
 {
 public:
     QLabel *label;
@@ -28,10 +28,10 @@ public:
     {
         if (TitlePage->objectName().isEmpty())
             TitlePage->setObjectName(QStringLiteral("TitlePage"));
-        TitlePage->resize(400, 300);
+        TitlePage->resize(700, 450);
         label = new QLabel(TitlePage);
         label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(20, 40, 331, 171));
+        label->setGeometry(QRect(190, 140, 331, 171));
         QFont font;
         font.setPointSize(36);
         label->setFont(font);
@@ -43,14 +43,14 @@ public:
 
     void retranslateUi(QWidget *TitlePage)
     {
-        TitlePage->setWindowTitle(QApplication::translate("Form", "Form", 0));
-        label->setText(QApplication::translate("Form", "Je suis un titre", 0));
+        TitlePage->setWindowTitle(QApplication::translate("TitlePage", "Form", 0));
+        label->setText(QApplication::translate("TitlePage", "Je suis un titre", 0));
     } // retranslateUi
 
 };
 
 namespace Ui {
-    class TitlePage: public Ui_title {};
+    class TitlePage: public Ui_TitlePage {};
 } // namespace Ui
 
 QT_END_NAMESPACE
