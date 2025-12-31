@@ -4,10 +4,8 @@ LukeTrainPage::LukeTrainPage(QWidget *parent,MainWindow *mainwindow) : Page(pare
 {
 ui->setupUi(this);
 connect(ui->unlock,&QPushButton::clicked,this,[=](){
+    setPageFinished();
 mainWindow->unlockNextPage();
 });
 }
 
-void LukeTrainPage::unlock(){
-        mainWindow->unlockNextPage();
-}

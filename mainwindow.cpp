@@ -32,14 +32,13 @@ MainWindow::MainWindow(QWidget *parent) :
 
 }
 void MainWindow::unlockNextPage(){
-    qDebug()<<(ui==nullptr);
-//ui->nextButtton->setEnabled(true);
+   ui->nextButtton->setEnabled(true);
 }
 
 MainWindow::~MainWindow()
 {
     for (int i = 0; i < pages.size(); ++i) {
-       free(pages[i]);
+       delete pages[i];
     }
     delete ui;
 }

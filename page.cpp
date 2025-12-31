@@ -2,7 +2,7 @@
 
 Page::Page(QWidget *parent,MainWindow *mainwindow) : QWidget(parent), pageFinished(false)
 {
-    this->mainWindow=mainWindow;
+    this->mainWindow=mainwindow;
 }
 
 void Page::setPageFinished() { pageFinished = true; }
