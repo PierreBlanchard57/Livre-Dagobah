@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT       += core gui multimedia
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -17,18 +17,25 @@ SOURCES += main.cpp\
     page.cpp \
     titlepage.cpp \
     endpage.cpp \
-    luketrainpage.cpp
+    luketrainpage.cpp \
+    lukeduelpage.cpp \
+    qtebutton.cpp
 
 HEADERS  += mainwindow.h \
     page.h \
     titlepage.h \
     endpage.h \
-    luketrainpage.h
+    luketrainpage.h \
+    lukeduelpage.h \
+    qtebutton.h
 
 FORMS    += mainwindow.ui \
     titlepage.ui \
     endpage.ui \
-    luketrainpage.ui
+    luketrainpage.ui \
+    lukeduelpage.ui
 
 RESOURCES += \
     images.qrc
+
+DISTFILES +=

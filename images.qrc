@@ -5,5 +5,20 @@
         <file>luke_normal.png</file>
         <file>rock_base.png</file>
         <file>rock_object.png</file>
+        <file>pages_m/duel_blow_left.gif</file>
+        <file>pages_m/duel_blow_right.gif</file>
+        <file>pages_m/duel_blow_up.gif</file>
+        <file>pages_m/duel_enter.gif</file>
+        <file>pages_m/duel_fail.gif</file>
+        <file>pages_m/duel_finish.gif</file>
+        <file>pages_m/xwing_lapse.gif</file>
+        <file>pages_m/xwing_lift.gif</file>
+        <file>pages_m/xwing_yoda.gif</file>
+        <file>pages_m/xwing_idle.gif</file>
+        <file>pages_m/duel_states.gif</file>
+        <file>pages_m/duel_enter.wav</file>
+        <file>pages_m/duel_ongoing.wav</file>
+        <file>pages_m/duel_echec.wav</file>
+        <file>pages_m/duel_success.wav</file>
     </qresource>
 </RCC>
