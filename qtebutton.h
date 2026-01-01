@@ -19,6 +19,7 @@ protected:
 private:
     QElapsedTimer timer;
     qint64 timeout;
+    QImage image;
 };
 
 #endif // QTEBUTTON_H

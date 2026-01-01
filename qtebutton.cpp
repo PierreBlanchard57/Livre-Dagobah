@@ -8,6 +8,8 @@ QTEButton::QTEButton(qint64 msTimeout, QWidget *parent)
 {
     timeout = msTimeout;
     timer.start();
+
+    image = QImage(QString(":/pages_m/hint_mouse.png"));
 }
 
 void QTEButton::paintEvent(QPaintEvent *)
@@ -33,6 +35,10 @@ void QTEButton::paintEvent(QPaintEvent *)
     // anneau interieur
     if ((1.0 - completion) * (height()>>1) > QTEBUTTON_INNER_RADIUS)
         painter.drawEllipse(QPoint(width()>>1, height()>>1), QTEBUTTON_INNER_RADIUS, QTEBUTTON_INNER_RADIUS);
-    //painter.fillRect(0, 0, width(), height(), Qt::GlobalColor::red);
+
+    if (elapsed < 1000) {
+        painter.drawImage(QPoint((width()>>1) - (image.width()>>1), (height()>>1) - (image.height()>>1)), image);
+    }
+
     update(); // invalidation immédiate
 }
