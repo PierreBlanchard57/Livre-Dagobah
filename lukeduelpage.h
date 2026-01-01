@@ -23,6 +23,8 @@ public:
     void showSuccess();
     void showFail();
 
+    void placeTimedButton();
+
 protected:
     void keyPressEvent(QKeyEvent* event) override;
 

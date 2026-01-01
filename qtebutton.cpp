@@ -14,6 +14,7 @@ void QTEButton::paintEvent(QPaintEvent *)
 {
     auto elapsed = timer.elapsed();
     if (elapsed > timeout) {
+        emit buttonTimeout();
         deleteLater();
         return;
     }

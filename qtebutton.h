@@ -10,6 +10,9 @@ class QTEButton : public QPushButton
 public:
     QTEButton(qint64 msTimeout, QWidget *parent = nullptr);
 
+signals:
+    void buttonTimeout();
+
 protected:
     void paintEvent(QPaintEvent *) override;
 

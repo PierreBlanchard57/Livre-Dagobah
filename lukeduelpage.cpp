@@ -1,6 +1,7 @@
 #include "lukeduelpage.h"
 #include "qtebutton.h"
 #include "ui_lukeduelpage.h"
+#include <stdlib.h>
 
 LukeDuelPage::LukeDuelPage(QWidget *parent) :
     Page(parent),
@@ -24,9 +25,30 @@ LukeDuelPage::LukeDuelPage(QWidget *parent) :
         // Etat de jeu
         showGameState();
     });
+}
 
-    QTEButton* testButton = new QTEButton(2000, this);
-    testButton->resize(64, 64);
+void LukeDuelPage::placeTimedButton()
+{
+    const int xOffset = 120;
+    const int yOffset = 70;
+
+    // bouton de jeu
+    QTEButton* testButton = new QTEButton(2000, ui->movieLabel);
+    switch (rand() % 3) {
+        case 0:
+            // en haut
+            testButton->setGeometry(ui->movieLabel->width()>>1, yOffset, 64, 64);
+        break;
+        case 1:
+            // à gauche
+            testButton->setGeometry(xOffset, ui->movieLabel->height() - yOffset, 64, 64);
+        break;
+        case 2:
+            // à droite
+            testButton->setGeometry(ui->movieLabel->width() - xOffset, ui->movieLabel->height() - (yOffset + 20), 64, 64);
+        break;
+    }
+    testButton->show();
 }
 
 void LukeDuelPage::showGameState()
@@ -36,6 +58,8 @@ void LukeDuelPage::showGameState()
 
     audioPlayer.setPlaylist(&audioList);
     audioPlayer.play();
+
+    placeTimedButton();
 }
 
 void LukeDuelPage::showSuccess()
