@@ -5,6 +5,7 @@
 #include <QMovie>
 #include <QtMultimedia/QMediaPlayer>
 #include <QtMultimedia/QMediaPlaylist>
+#include "qtebutton.h"
 #include "page.h"
 
 namespace Ui {
@@ -19,11 +20,13 @@ public:
     explicit LukeDuelPage(QWidget *parent = 0);
     ~LukeDuelPage();
 
-    void showGameState();
+public slots:
+    void showGameState(bool init = true);
     void showSuccess();
     void showFail();
+    void showSaberStrike();
 
-    void placeTimedButton();
+    bool placeTimedButton();
 
 protected:
     void keyPressEvent(QKeyEvent* event) override;
@@ -33,8 +36,11 @@ private:
 
     QMovie movie;
     QMediaPlayer audioPlayer;
+    QMediaPlayer sfxPlayer;
     QMediaPlaylist audioList;
+    QTEButton* currentButton;
 
+    int lastStrikeDirection;
     int numSuccessfulStrikes;
 };
 

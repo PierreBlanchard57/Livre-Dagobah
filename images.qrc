@@ -19,6 +19,7 @@
         <file>pages_m/duel_enter.wav</file>
         <file>pages_m/duel_ongoing.wav</file>
         <file>pages_m/duel_echec.wav</file>
+        <file>pages_m/duel_strike.wav</file>
         <file>pages_m/duel_success.wav</file>
     </qresource>
 </RCC>

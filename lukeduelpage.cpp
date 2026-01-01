@@ -1,5 +1,4 @@
 #include "lukeduelpage.h"
-#include "qtebutton.h"
 #include "ui_lukeduelpage.h"
 #include <QTimer>
 #include <stdlib.h>
@@ -8,6 +7,8 @@ LukeDuelPage::LukeDuelPage(QWidget *parent) :
     Page(parent),
     ui(new Ui::LukeDuelPage)
 {
+    currentButton = nullptr;
+
     ui->setupUi(this);
     audioList.addMedia(QUrl("qrc:/pages_m/duel_ongoing.wav"));
     audioList.setPlaybackMode(QMediaPlaylist::Loop);
@@ -23,62 +24,93 @@ LukeDuelPage::LukeDuelPage(QWidget *parent) :
     QObject* oneShot = new QObject();
     connect(&movie, &QMovie::finished, oneShot, [=](){
         oneShot->deleteLater();
-        // Etat de jeu
+        // Démarrage du jeu
         showGameState();
     });
 }
 
-void LukeDuelPage::placeTimedButton()
+void LukeDuelPage::showSaberStrike()
 {
-    static QTEButton* testButton = nullptr;
-    if (testButton) {
-        testButton->deleteLater();
-        testButton = nullptr;
+    if (currentButton) {
+        currentButton->deleteLater();
+        currentButton = nullptr;
+    }
+
+    const char* anims[] = {
+        ":/pages_m/duel_blow_left.gif",
+        ":/pages_m/duel_blow_up.gif",
+        ":/pages_m/duel_blow_right.gif"
+    };
+    movie.setFileName(anims[lastStrikeDirection]);
+    movie.start();
+
+    sfxPlayer.setMedia(QUrl("qrc:/pages_m/duel_strike.wav"));
+    sfxPlayer.play();
+
+    QObject* oneShot = new QObject();
+    connect(&movie, &QMovie::finished, oneShot, [=](){
+        oneShot->deleteLater();
+        // retour au jeu
+        showGameState(false);
+    });
+}
+
+bool LukeDuelPage::placeTimedButton()
+{
+    if (currentButton) {
+        currentButton->deleteLater();
+        currentButton = nullptr;
     }
 
     if (numSuccessfulStrikes-- <= 0) {
         showSuccess();
         setPageFinished();
-        return;
+        return false;
     }
 
     const int xOffset = 120;
     const int yOffset = 70;
 
     // placement du bouton de jeu (1200ms + N*ms) le temps se raccourcit au fur et à mesure des clics.
-    testButton = new QTEButton(1200 + (numSuccessfulStrikes * 100), ui->movieLabel);
-    switch (rand() % 3) {
+    currentButton = new QTEButton(1200 + (numSuccessfulStrikes * 100), ui->movieLabel);
+    lastStrikeDirection = rand() % 3;
+    switch (lastStrikeDirection) {
         case 0:
-            // en haut
-            testButton->setGeometry(ui->movieLabel->width()>>1, yOffset, 64, 64);
+            // à gauche
+            currentButton->setGeometry(xOffset, ui->movieLabel->height() - yOffset, 64, 64);
         break;
         case 1:
-            // à gauche
-            testButton->setGeometry(xOffset, ui->movieLabel->height() - yOffset, 64, 64);
+            // en haut
+            currentButton->setGeometry(ui->movieLabel->width()>>1, yOffset, 64, 64);
         break;
         case 2:
             // à droite
-            testButton->setGeometry(ui->movieLabel->width() - xOffset, ui->movieLabel->height() - (yOffset + 20), 64, 64);
+            currentButton->setGeometry(ui->movieLabel->width() - xOffset, ui->movieLabel->height() - (yOffset + 20), 64, 64);
         break;
     }
-    testButton->show();
+    currentButton->show();
 
-    connect(testButton, &QTEButton::buttonTimeout, this, &LukeDuelPage::showFail);
-    connect(testButton, &QTEButton::clicked, this, &LukeDuelPage::placeTimedButton);
+    connect(currentButton, &QTEButton::buttonTimeout, this, &LukeDuelPage::showFail);
+    connect(currentButton, &QTEButton::clicked, this, &LukeDuelPage::showSaberStrike);
+    return true;
 }
 
-void LukeDuelPage::showGameState()
+void LukeDuelPage::showGameState(bool init)
 {
-    // nombre arbitraire de coups à porter avant de gagner
-    numSuccessfulStrikes = 10;
+    if (init) {
+        // nombre arbitraire de coups à porter avant de gagner
+        numSuccessfulStrikes = 10;
 
-    movie.setFileName(":/pages_m/duel_states.gif");
-    movie.start();
+        // la musique doit continuer entre les coups
+        audioPlayer.setPlaylist(&audioList);
+        audioPlayer.play();
+        currentButton = nullptr;
+    }
 
-    audioPlayer.setPlaylist(&audioList);
-    audioPlayer.play();
-
-    placeTimedButton();
+    if (placeTimedButton()) {
+        movie.setFileName(":/pages_m/duel_states.gif");
+        movie.start();
+    }
 }
 
 void LukeDuelPage::showSuccess()
@@ -107,6 +139,7 @@ void LukeDuelPage::showFail()
         delay->setSingleShot(true);
         connect(delay, &QTimer::timeout, this, [=](){
             delay->deleteLater();
+            // redémarrage du jeu
             showGameState();
         });
     });
