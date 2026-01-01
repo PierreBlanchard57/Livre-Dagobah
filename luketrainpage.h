@@ -16,8 +16,10 @@ private:
     int rocksPlaced=0;
     bool isDragging=false;
     const double gravity=5;
+    QPoint *offset;
     bool eventFilter(QObject *watched, QEvent *event);
     void changeLukePose(const std::string &file);
+    void updateRockPos();
     void unlock();
 };
 
