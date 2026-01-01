@@ -35,6 +35,39 @@
     <set>Qt::AlignCenter</set>
    </property>
   </widget>
+  <widget class="QLabel" name="blurbLabel">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>270</y>
+     <width>541</width>
+     <height>171</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>11</pointsize>
+    </font>
+   </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(255, 248, 187);
+border-color: rgb(0, 0, 0);
+border-style: solid;
+border-width: 1px;</string>
+   </property>
+   <property name="text">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;De la brume jaillit la silhouette du seigneur Vador, le rigoureux entraiînement de ces derniers jours avait préparé Luke à cette rencontre. Il n'eut aucun mal à éviter la première attaque. En un éclair, il avait bondi de côté. La Force était en lui. Il la sentait couler dans ses membres telle une sève puissante. Il se fendit en avant, visant l'horrible masque, et la tête casquée du Seigneur Noir vola en l'air. Le corps de Dark Vador disparut, comme avalé. Lentement, Luke baissa les yeux vers le masque qui avait atterri juste devant ses pieds. Le heaume s'était ouvert dans sa chute, révélant au regard incrédule du jeune homme son propre visage le fixant.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+   </property>
+   <property name="wordWrap">
+    <bool>true</bool>
+   </property>
+  </widget>
  </widget>
  <resources>
   <include location="images.qrc"/>
