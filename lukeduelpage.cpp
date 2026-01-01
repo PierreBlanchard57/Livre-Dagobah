@@ -1,6 +1,7 @@
 #include "lukeduelpage.h"
 #include "qtebutton.h"
 #include "ui_lukeduelpage.h"
+#include <QTimer>
 #include <stdlib.h>
 
 LukeDuelPage::LukeDuelPage(QWidget *parent) :
@@ -29,11 +30,23 @@ LukeDuelPage::LukeDuelPage(QWidget *parent) :
 
 void LukeDuelPage::placeTimedButton()
 {
+    static QTEButton* testButton = nullptr;
+    if (testButton) {
+        testButton->deleteLater();
+        testButton = nullptr;
+    }
+
+    if (numSuccessfulStrikes-- <= 0) {
+        showSuccess();
+        setPageFinished();
+        return;
+    }
+
     const int xOffset = 120;
     const int yOffset = 70;
 
-    // bouton de jeu
-    QTEButton* testButton = new QTEButton(2000, ui->movieLabel);
+    // placement du bouton de jeu (1200ms + N*ms) le temps se raccourcit au fur et à mesure des clics.
+    testButton = new QTEButton(1200 + (numSuccessfulStrikes * 100), ui->movieLabel);
     switch (rand() % 3) {
         case 0:
             // en haut
@@ -49,10 +62,16 @@ void LukeDuelPage::placeTimedButton()
         break;
     }
     testButton->show();
+
+    connect(testButton, &QTEButton::buttonTimeout, this, &LukeDuelPage::showFail);
+    connect(testButton, &QTEButton::clicked, this, &LukeDuelPage::placeTimedButton);
 }
 
 void LukeDuelPage::showGameState()
 {
+    // nombre arbitraire de coups à porter avant de gagner
+    numSuccessfulStrikes = 10;
+
     movie.setFileName(":/pages_m/duel_states.gif");
     movie.start();
 
@@ -78,6 +97,19 @@ void LukeDuelPage::showFail()
 
     audioPlayer.setMedia(QUrl("qrc:/pages_m/duel_echec.wav"));
     audioPlayer.play();
+
+    QObject* oneShot = new QObject();
+    connect(&movie, &QMovie::finished, oneShot, [=](){
+        oneShot->deleteLater();
+        // on revient au jeu
+        QTimer* delay = new QTimer;
+        delay->start(3000);
+        delay->setSingleShot(true);
+        connect(delay, &QTimer::timeout, this, [=](){
+            delay->deleteLater();
+            showGameState();
+        });
+    });
 }
 
 void LukeDuelPage::keyPressEvent(QKeyEvent* event)

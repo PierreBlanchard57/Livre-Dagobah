@@ -34,6 +34,8 @@ private:
     QMovie movie;
     QMediaPlayer audioPlayer;
     QMediaPlaylist audioList;
+
+    int numSuccessfulStrikes;
 };
 
 #endif // LUKEDUELPAGE_H
