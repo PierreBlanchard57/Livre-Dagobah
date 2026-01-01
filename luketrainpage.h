@@ -13,12 +13,16 @@ public:
     explicit LukeTrainPage(QWidget *parent = nullptr,MainWindow *mainwindow=nullptr);
 private:
     Ui::LukeTrainPage *ui;
-    int rocksPlaced=0;
+    bool rocksPlaced[3]={};
+    int rocksFinalY[3]={};
+    int cumulativeRocksY=170;
     bool isDragging=false;
     const double gravity=5;
-    QPoint *offset;
+    const int toleratedPos=420;
+    QPoint offset;
     bool eventFilter(QObject *watched, QEvent *event);
     void changeLukePose(const std::string &file);
+    int determineGround(int posX,int id);
     void updateRockPos();
     void unlock();
 };

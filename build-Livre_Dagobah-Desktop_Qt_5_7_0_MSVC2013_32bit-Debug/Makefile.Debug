@@ -512,38 +512,6 @@ debug\moc_titlepage.cpp: C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\QWidget \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qtabwidget.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qicon.h \
 		ui_titlepage.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\QVariant \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\QAction \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qaction.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qactiongroup.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\QApplication \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qapplication.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qcoreapplication.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qeventloop.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qdesktopwidget.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qguiapplication.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qinputmethod.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\QButtonGroup \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qbuttongroup.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\QHeaderView \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qheaderview.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qabstractitemview.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qabstractscrollarea.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qframe.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qabstractitemmodel.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qitemselectionmodel.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qabstractitemdelegate.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qstyleoption.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qabstractspinbox.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qvalidator.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qregularexpression.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qslider.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qabstractslider.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qstyle.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qtabbar.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qrubberband.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\QLabel \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qlabel.h \
 		..\titlepage.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\bin\moc.exe
 	C:\Qt\Qt5.7.0\5.7\msvc2013\bin\moc.exe $(DEFINES) -D_MSC_VER=1800 -D_WIN32 -IC:/Qt/Qt5.7.0/5.7/msvc2013/mkspecs/win32-msvc2013 -IG:/Livre_Dagobah -IC:/Qt/Qt5.7.0/5.7/msvc2013/include -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtWidgets -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtGui -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtANGLE -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtCore -I. ..\titlepage.h -o debug\moc_titlepage.cpp
@@ -652,38 +620,6 @@ debug\moc_endpage.cpp: C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\QWidget \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qtabwidget.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qicon.h \
 		ui_endpage.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\QVariant \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\QAction \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qaction.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qactiongroup.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\QApplication \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qapplication.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qcoreapplication.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qeventloop.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qdesktopwidget.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qguiapplication.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qinputmethod.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\QButtonGroup \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qbuttongroup.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\QHeaderView \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qheaderview.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qabstractitemview.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qabstractscrollarea.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qframe.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qabstractitemmodel.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qitemselectionmodel.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qabstractitemdelegate.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qstyleoption.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qabstractspinbox.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qvalidator.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qregularexpression.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qslider.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qabstractslider.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qstyle.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qtabbar.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qrubberband.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\QLabel \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qlabel.h \
 		..\endpage.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\bin\moc.exe
 	C:\Qt\Qt5.7.0\5.7\msvc2013\bin\moc.exe $(DEFINES) -D_MSC_VER=1800 -D_WIN32 -IC:/Qt/Qt5.7.0/5.7/msvc2013/mkspecs/win32-msvc2013 -IG:/Livre_Dagobah -IC:/Qt/Qt5.7.0/5.7/msvc2013/include -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtWidgets -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtGui -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtANGLE -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtCore -I. ..\endpage.h -o debug\moc_endpage.cpp
@@ -785,45 +721,14 @@ debug\moc_luketrainpage.cpp: C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\QWidge
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qfiledevice.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qvector2d.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qtouchdevice.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\QObject \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\QEvent \
 		..\page.h \
 		..\mainwindow.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\QMainWindow \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qmainwindow.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qtabwidget.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qicon.h \
-		ui_luketrainpage.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\QVariant \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\QAction \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qaction.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qactiongroup.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\QApplication \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qapplication.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qcoreapplication.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qeventloop.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qdesktopwidget.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qguiapplication.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qinputmethod.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\QButtonGroup \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qbuttongroup.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\QHeaderView \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qheaderview.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qabstractitemview.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qabstractscrollarea.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qframe.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qabstractitemmodel.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qitemselectionmodel.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qabstractitemdelegate.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qstyleoption.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qabstractspinbox.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qvalidator.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qregularexpression.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qslider.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qabstractslider.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qstyle.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qtabbar.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qrubberband.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\QLabel \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qlabel.h \
 		..\luketrainpage.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\bin\moc.exe
 	C:\Qt\Qt5.7.0\5.7\msvc2013\bin\moc.exe $(DEFINES) -D_MSC_VER=1800 -D_WIN32 -IC:/Qt/Qt5.7.0/5.7/msvc2013/mkspecs/win32-msvc2013 -IG:/Livre_Dagobah -IC:/Qt/Qt5.7.0/5.7/msvc2013/include -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtWidgets -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtGui -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtANGLE -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtCore -I. ..\luketrainpage.h -o debug\moc_luketrainpage.cpp
@@ -1072,61 +977,19 @@ debug\mainwindow.obj: ..\mainwindow.cpp ../mainwindow.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qtabwidget.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qicon.h \
 		ui_mainwindow.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\QVariant \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\QAction \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qaction.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qactiongroup.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\QApplication \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qapplication.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qcoreapplication.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qeventloop.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qdesktopwidget.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qguiapplication.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qinputmethod.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\QButtonGroup \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qbuttongroup.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\QHeaderView \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qheaderview.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qabstractitemview.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qabstractscrollarea.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qframe.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qabstractitemmodel.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qitemselectionmodel.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qabstractitemdelegate.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qstyleoption.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qabstractspinbox.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qvalidator.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qregularexpression.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qslider.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qabstractslider.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qstyle.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qtabbar.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qrubberband.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\QLabel \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qlabel.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\QMenuBar \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qmenubar.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qmenu.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\QPushButton \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qpushbutton.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qabstractbutton.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\QStatusBar \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qstatusbar.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\QToolBar \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qtoolbar.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\QVBoxLayout \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qboxlayout.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qlayout.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qlayoutitem.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qgridlayout.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\QWidget \
 		../page.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\QWidget \
 		../titlepage.h \
 		ui_titlepage.h \
 		../endpage.h \
 		ui_endpage.h \
 		../luketrainpage.h \
-		ui_luketrainpage.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\QObject \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\QEvent \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qlayout.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qlayoutitem.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qboxlayout.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qgridlayout.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\QDebug
 
 debug\page.obj: ..\page.cpp ../page.h \
@@ -1337,39 +1200,7 @@ debug\titlepage.obj: ..\titlepage.cpp ../titlepage.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qmainwindow.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qtabwidget.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qicon.h \
-		ui_titlepage.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\QVariant \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\QAction \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qaction.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qactiongroup.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\QApplication \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qapplication.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qcoreapplication.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qeventloop.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qdesktopwidget.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qguiapplication.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qinputmethod.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\QButtonGroup \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qbuttongroup.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\QHeaderView \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qheaderview.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qabstractitemview.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qabstractscrollarea.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qframe.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qabstractitemmodel.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qitemselectionmodel.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qabstractitemdelegate.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qstyleoption.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qabstractspinbox.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qvalidator.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qregularexpression.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qslider.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qabstractslider.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qstyle.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qtabbar.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qrubberband.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\QLabel \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qlabel.h
+		ui_titlepage.h
 
 debug\endpage.obj: ..\endpage.cpp ../endpage.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\QWidget \
@@ -1475,39 +1306,7 @@ debug\endpage.obj: ..\endpage.cpp ../endpage.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qmainwindow.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qtabwidget.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qicon.h \
-		ui_endpage.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\QVariant \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\QAction \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qaction.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qactiongroup.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\QApplication \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qapplication.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qcoreapplication.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qeventloop.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qdesktopwidget.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qguiapplication.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qinputmethod.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\QButtonGroup \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qbuttongroup.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\QHeaderView \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qheaderview.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qabstractitemview.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qabstractscrollarea.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qframe.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qabstractitemmodel.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qitemselectionmodel.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qabstractitemdelegate.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qstyleoption.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qabstractspinbox.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qvalidator.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qregularexpression.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qslider.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qabstractslider.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qstyle.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qtabbar.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qrubberband.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\QLabel \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qlabel.h
+		ui_endpage.h
 
 debug\luketrainpage.obj: ..\luketrainpage.cpp ../luketrainpage.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\QWidget \
@@ -1607,45 +1406,19 @@ debug\luketrainpage.obj: ..\luketrainpage.cpp ../luketrainpage.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qfiledevice.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qvector2d.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qtouchdevice.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\QObject \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\QEvent \
 		../page.h \
 		../mainwindow.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\QMainWindow \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qmainwindow.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qtabwidget.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qicon.h \
-		ui_luketrainpage.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\QVariant \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\QAction \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qaction.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qactiongroup.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\QApplication \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qapplication.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qcoreapplication.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qeventloop.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qdesktopwidget.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qguiapplication.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qinputmethod.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\QButtonGroup \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qbuttongroup.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\QHeaderView \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qheaderview.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qabstractitemview.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qabstractscrollarea.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qframe.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qabstractitemmodel.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qitemselectionmodel.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qabstractitemdelegate.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qstyleoption.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qabstractspinbox.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qvalidator.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qregularexpression.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qslider.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qabstractslider.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qstyle.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qtabbar.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qrubberband.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\QLabel \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qlabel.h
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\QMouseEvent \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\QDebug \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\QTimer \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qtimer.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qbasictimer.h
 
 debug\qrc_images.obj: debug\qrc_images.cpp 
 

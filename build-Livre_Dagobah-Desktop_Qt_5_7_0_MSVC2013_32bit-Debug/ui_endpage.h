@@ -19,17 +19,17 @@
 
 QT_BEGIN_NAMESPACE
 
-class a
+class Ui_EndPage
 {
 public:
     QLabel *label;
 
-    void setupUi(QWidget *Form)
+    void setupUi(QWidget *EndPage)
     {
-        if (Form->objectName().isEmpty())
-            Form->setObjectName(QStringLiteral("Form"));
-        Form->resize(700, 450);
-        label = new QLabel(Form);
+        if (EndPage->objectName().isEmpty())
+            EndPage->setObjectName(QStringLiteral("EndPage"));
+        EndPage->resize(700, 450);
+        label = new QLabel(EndPage);
         label->setObjectName(QStringLiteral("label"));
         label->setGeometry(QRect(240, 160, 201, 151));
         QFont font;
@@ -38,21 +38,21 @@ public:
         font.setWeight(75);
         label->setFont(font);
 
-        retranslateUi(Form);
+        retranslateUi(EndPage);
 
-        QMetaObject::connectSlotsByName(Form);
+        QMetaObject::connectSlotsByName(EndPage);
     } // setupUi
 
-    void retranslateUi(QWidget *Form)
+    void retranslateUi(QWidget *EndPage)
     {
-        Form->setWindowTitle(QApplication::translate("Form", "Form", 0));
-        label->setText(QApplication::translate("Form", "FIN", 0));
+        EndPage->setWindowTitle(QApplication::translate("EndPage", "Form", 0));
+        label->setText(QApplication::translate("EndPage", "FIN", 0));
     } // retranslateUi
 
 };
 
 namespace Ui {
-    class EndPage: public a {};
+    class EndPage: public Ui_EndPage {};
 } // namespace Ui
 
 QT_END_NAMESPACE
