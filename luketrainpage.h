@@ -11,6 +11,8 @@ public:
     explicit LukeTrainPage(QWidget *parent = nullptr,MainWindow *mainwindow=nullptr);
 private:
     Ui::LukeTrainPage *ui;
+    int rocksPlaced=0;
+    bool isDragging=false;
     void unlock();
 };
 

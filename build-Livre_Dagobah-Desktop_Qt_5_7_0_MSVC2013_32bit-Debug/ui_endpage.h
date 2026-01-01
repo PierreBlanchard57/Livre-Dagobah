@@ -19,7 +19,7 @@
 
 QT_BEGIN_NAMESPACE
 
-class endPage
+class a
 {
 public:
     QLabel *label;
@@ -52,7 +52,7 @@ public:
 };
 
 namespace Ui {
-    class EndPage: public endPage {};
+    class EndPage: public a {};
 } // namespace Ui
 
 QT_END_NAMESPACE

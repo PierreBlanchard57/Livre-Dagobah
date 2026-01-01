@@ -1,5 +1,9 @@
 <RCC>
     <qresource prefix="/">
         <file>training.png</file>
+        <file>luke_force.png</file>
+        <file>luke_normal.png</file>
+        <file>rock_base.png</file>
+        <file>rock_object.png</file>
     </qresource>
 </RCC>
