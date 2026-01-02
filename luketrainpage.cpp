@@ -34,8 +34,7 @@ if(watched== ui->rock1 || watched==ui->rock2 || watched==ui->rock3){
                     changeLukePose("./luke_normal.png");
                     isDragging=false;
                     if(rocksPlaced[0] && rocksPlaced[1] && rocksPlaced[2]){
-                    setPageFinished();
-                    mainWindow->unlockNextPage();
+                        setPageFinished();
                     }
                         qDebug() << "relaché";
                 }

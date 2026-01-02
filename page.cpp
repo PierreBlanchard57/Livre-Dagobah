@@ -5,5 +5,8 @@ Page::Page(QWidget *parent,MainWindow *mainwindow) : QWidget(parent), pageFinish
     this->mainWindow=mainwindow;
 }
 
-void Page::setPageFinished() { pageFinished = true; }
+void Page::setPageFinished() {
+    pageFinished = true;
+    if(mainWindow!=nullptr)mainWindow->unlockNextPage();
+                             }
 bool Page::isPageFinished() const { return pageFinished; }
