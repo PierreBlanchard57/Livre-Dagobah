@@ -3,8 +3,8 @@
 #include <QTimer>
 #include <stdlib.h>
 
-LukeDuelPage::LukeDuelPage(QWidget *parent) :
-    Page(parent),
+LukeDuelPage::LukeDuelPage(QWidget *parent,MainWindow *mainwindow) :
+    Page(parent,mainwindow),
     ui(new Ui::LukeDuelPage)
 {
     currentButton = nullptr;
@@ -137,6 +137,8 @@ void LukeDuelPage::showSuccess()
 
     audioPlayer.setMedia(QUrl("./pages_m/duel_success.wav"));
     audioPlayer.play();
+    //on débloque la page suivante
+    setPageFinished();
 }
 
 void LukeDuelPage::showFail()

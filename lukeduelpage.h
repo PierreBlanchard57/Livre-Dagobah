@@ -7,7 +7,7 @@
 #include <QtMultimedia/QMediaPlaylist>
 #include "qtebutton.h"
 #include "page.h"
-
+#include "mainwindow.h"
 namespace Ui {
 class LukeDuelPage;
 }
@@ -17,7 +17,7 @@ class LukeDuelPage : public Page
     Q_OBJECT
 
 public:
-    explicit LukeDuelPage(QWidget *parent = 0);
+    explicit LukeDuelPage(QWidget *parent = 0,MainWindow *mainwindow=nullptr);
     ~LukeDuelPage();
 
 public slots:
