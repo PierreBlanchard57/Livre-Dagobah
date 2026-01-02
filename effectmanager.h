@@ -52,7 +52,7 @@ protected:
 
 private:
     std::vector<CImmProject*> m_effects;
-    CImmDevice* m_device;
+    static CImmDevice* m_device;
 };
 
 #endif // EFFECTMANAGER_H

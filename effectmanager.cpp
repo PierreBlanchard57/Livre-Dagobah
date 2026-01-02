@@ -7,6 +7,8 @@
 #include <IFC.h>
 #endif
 
+CImmDevice* EffectManager::m_device = nullptr;
+
 bool EffectManager::isProjectPlaying(CImmProject *p)
 {
     int nCompounds = p->GetNumEffects();
@@ -23,7 +25,6 @@ bool EffectManager::isProjectPlaying(CImmProject *p)
 
 EffectManager::EffectManager(QObject *parent) : QObject(parent)
 {
-    m_device = nullptr;
 }
 
 bool EffectManager::initializeMouse(const QWindow &window)
