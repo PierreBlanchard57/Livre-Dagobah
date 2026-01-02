@@ -31,7 +31,7 @@ void QTEButton::paintEvent(QPaintEvent *)
     painter.setPen(pen);
     // anneau exterieur
     painter.drawEllipse(QPoint(width()>>1, height()>>1),
-                        (1.0 - completion) * (width()>>1), (1.0 - completion) * (height()>>1));
+                        qreal((1.0 - completion) * (width()>>1)), qreal((1.0 - completion) * (height()>>1)));
     // anneau interieur
     if ((1.0 - completion) * (height()>>1) > QTEBUTTON_INNER_RADIUS)
         painter.drawEllipse(QPoint(width()>>1, height()>>1), QTEBUTTON_INNER_RADIUS, QTEBUTTON_INNER_RADIUS);
