@@ -115,7 +115,7 @@ void YodaLiftPage::placeTimedButton()
     }
 
     const int xOffset = 120;
-    const int yOffset = 70;
+    int yOffset = (movie.currentFrameNumber() * 2) + 80;
 
     // 1 sec à chaque fois
     currentButton = new QTEButton(1000, ui->movieLabel);
@@ -126,7 +126,7 @@ void YodaLiftPage::placeTimedButton()
     break;
     case 1:
         // à droite
-        currentButton->setGeometry(ui->movieLabel->width() - xOffset, ui->movieLabel->height() - (yOffset + 20), 64, 64);
+        currentButton->setGeometry(ui->movieLabel->width() - xOffset, ui->movieLabel->height() - yOffset, 64, 64);
     break;
     }
     buttonSide = !buttonSide;
