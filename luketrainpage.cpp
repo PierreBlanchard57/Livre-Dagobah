@@ -6,13 +6,16 @@
 #include <QTimer>
 LukeTrainPage::LukeTrainPage(QWidget *parent,MainWindow *mainwindow) : Page(parent,mainwindow),ui(new Ui::LukeTrainPage)
 {
-ui->setupUi(this);
-ui->rock1->installEventFilter(this);
-ui->rock2->installEventFilter(this);
-ui->rock3->installEventFilter(this);
-QTimer *timer = new QTimer(this);
-        connect(timer, &QTimer::timeout, this, &LukeTrainPage::updateRockPos);
-        timer->start(16);
+    ui->setupUi(this);
+    ui->rock1->installEventFilter(this);
+    ui->rock2->installEventFilter(this);
+    ui->rock3->installEventFilter(this);
+    QTimer *timer = new QTimer(this);
+    connect(timer, &QTimer::timeout, this, &LukeTrainPage::updateRockPos);
+    timer->start(16);
+    if(!effects.initializeMouse(mainWindow))
+        qDebug() << "No haptic mouse plugged in!";
+
 }
 
 bool LukeTrainPage::eventFilter(QObject *watched, QEvent *event){
@@ -21,10 +24,10 @@ if(watched== ui->rock1 || watched==ui->rock2 || watched==ui->rock3){
     if (event->type() == QEvent::MouseButtonPress) {
                 QMouseEvent *mouseEvent = static_cast<QMouseEvent *>(event);
                 if (mouseEvent->button() == Qt::LeftButton) {
-                        qDebug() << "enfoncé";
                         isDragging=true;
                         changeLukePose("./luke_force.png");
                         offset=mainWindow->pos()+QPoint(40,60);
+                        effects.pushProject("gravity.ifr","Compound",true);
 
                 }
             }
@@ -33,24 +36,23 @@ if(watched== ui->rock1 || watched==ui->rock2 || watched==ui->rock3){
                 if (mouseEvent->button() == Qt::LeftButton) {
                     changeLukePose("./luke_normal.png");
                     isDragging=false;
+                    effects.clearAllEffects();
                     if(rocksPlaced[0] && rocksPlaced[1] && rocksPlaced[2]){
                         setPageFinished();
                     }
-                        qDebug() << "relaché";
                 }
             }
 
 }
 if (event->type() == QEvent::MouseMove && isDragging) {
+
      QMouseEvent *mouseEvent = static_cast<QMouseEvent *>(event);
      QPoint pos=mouseEvent->globalPos()-offset;
      //limitation de la position
      int posX=std::min(std::max(200,pos.x()),460);
      int posY=std::min(std::max(0,pos.y()),200);
-    if(posX>toleratedPos && posY>cumulativeRocksY){
-    posY=cumulativeRocksY;
-    }
      pos=QPoint(posX,posY);
+     if(posY==200)effects.pushProject("ground.ifr","Compound",false);
     //translation du label cible
      ((QLabel*)watched)->move(pos.x(),pos.y());
      if(pos.x()>toleratedPos){
