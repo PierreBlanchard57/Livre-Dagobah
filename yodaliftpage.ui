@@ -37,7 +37,7 @@ border-style: solid;
 border-width: 1px;</string>
    </property>
    <property name="text">
-    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;...&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Le Maître tourna son regard vers le marais. D'abord, l'eau commença à tourbillonner sur elle même, puis à bouillonner furieusement et, sous les yeux de Luke abasourdi, le chasseur X émergea gracieusement de sa tombe aquatique pour se diriger lentement sur la rive. Et à quelque pas de là, Yoda le minuscule guidait sans effort la course du vaisseau. Luke avait pourtant jugé cette performance d'impossible. Quelle démonstration plus éclatante pourrait-il avoir de la toute puissance que la Force pouvait conférer à ses initiés ? Aussi abasourdi mais plus prosaïque, D2 salua l'évènement d'une trille de sifflements.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
