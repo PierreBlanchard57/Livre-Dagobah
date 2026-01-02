@@ -47,8 +47,8 @@ if (event->type() == QEvent::MouseMove && isDragging) {
      //limitation de la position
      int posX=std::min(std::max(200,pos.x()),460);
      int posY=std::min(std::max(0,pos.y()),200);
-    if(posX>toleratedPos){
-    posY-=30;
+    if(posX>toleratedPos && posY>cumulativeRocksY){
+    posY=cumulativeRocksY;
     }
      pos=QPoint(posX,posY);
     //translation du label cible
