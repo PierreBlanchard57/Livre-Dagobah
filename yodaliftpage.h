@@ -25,6 +25,7 @@ public slots:
     void showGameState();
     void showFail();
     void showSuccess();
+    void showIntro(bool startMusic = true);
     void updateGameState();
     void involveGame();
 

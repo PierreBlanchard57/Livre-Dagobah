@@ -27,20 +27,10 @@ void YodaLiftPage::showEvent(QShowEvent *event)
     if (initialized)
         return;
 
-    movie.setFileName(":/pages_m/xwing_yoda.gif");
     ui->movieLabel->setMovie(&movie);
-
     audioPlayer.setPlaylist(&audioList);
+    showIntro(true);
 
-    movie.start();
-    audioPlayer.play();
-
-    QObject* oneShot = new QObject();
-    connect(&movie, &QMovie::finished, oneShot, [=](){
-        oneShot->deleteLater();
-        // Démarrage du jeu
-        showGameState();
-    });
     initialized = true;
 }
 
@@ -48,6 +38,22 @@ void YodaLiftPage::hideEvent(QHideEvent *event)
 {
     updateTimer.stop();
     audioPlayer.stop();
+}
+
+void YodaLiftPage::showIntro(bool startMusic)
+{
+    movie.setFileName(":/pages_m/xwing_yoda.gif");
+
+    movie.start();
+    if (startMusic)
+        audioPlayer.play();
+
+    QObject* oneShot = new QObject();
+    connect(&movie, &QMovie::finished, oneShot, [=](){
+        oneShot->deleteLater();
+        // Démarrage du jeu
+        showGameState();
+    });
 }
 
 void YodaLiftPage::showFail()
@@ -67,17 +73,10 @@ void YodaLiftPage::showFail()
 
     // il faut remontrer yoda puis relancer le jeu
     QObject* oneShot = new QObject();
-    connect(&movie, &QMovie::finished, oneShot, [&](){
+    connect(&movie, &QMovie::finished, oneShot, [=](){
         oneShot->deleteLater();
         // Redémarrage du jeu
-        movie.setFileName(":/pages_m/xwing_yoda.gif");
-        movie.start();
-        QObject* oneShot = new QObject();
-        connect(&movie, &QMovie::finished, oneShot, [=](){
-            oneShot->deleteLater();
-            // Démarrage du jeu
-            showGameState();
-        });
+        showIntro();
     });
     initialized = true;
 }
