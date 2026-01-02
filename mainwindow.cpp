@@ -19,7 +19,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
     //pages
     pages.push_back(new TitlePage(ui->pageContainer));
-    pages.push_back(new LukeDuelPage(ui->pageContainer));
+    pages.push_back(new LukeDuelPage(ui->pageContainer,this));
     pages.push_back(new TitlePage(ui->pageContainer));
     pages.push_back(new LukeTrainPage(ui->pageContainer,this));
     pages.push_back(new TitlePage(ui->pageContainer));
