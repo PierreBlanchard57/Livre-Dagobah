@@ -6,6 +6,7 @@
 #include <QTimer>
 #include <QtMultimedia/QMediaPlayer>
 #include <QtMultimedia/QMediaPlaylist>
+#include "effectmanager.h"
 #include "qtebutton.h"
 #include "page.h"
 
@@ -18,7 +19,7 @@ class YodaLiftPage : public Page
     Q_OBJECT
 
 public:
-    explicit YodaLiftPage(QWidget *parent = 0);
+    explicit YodaLiftPage(QWidget *parent = 0, MainWindow *mainWindow = nullptr);
     ~YodaLiftPage();
 
 public slots:
@@ -28,6 +29,7 @@ public slots:
     void showIntro(bool startMusic = true);
     void updateGameState();
     void involveGame();
+    void frameHook(int nframe);
 
 protected:
     void showEvent(QShowEvent *event) override;
@@ -47,6 +49,8 @@ private:
     bool buttonSide;
     bool hasClickedOnce;
     QTEButton* currentButton;
+
+    EffectManager effects;
 };
 
 #endif // YODALIFTPAGE_H

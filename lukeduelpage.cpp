@@ -63,7 +63,6 @@ void LukeDuelPage::frameHook(int nframe)
     if (!isVisible())
         return;
 
-    qDebug() << "Frame " << nframe;
     if (movie.fileName().contains("blow")) {
         if (nframe == 0) { // Lancement du sabre
             char const* blow[] = {"blow_left", "blow_up", "blow_right"};

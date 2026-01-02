@@ -3,9 +3,12 @@
 #include <stdlib.h>
 
 #define YODA_LIFT_PAGE_RES "./pages_m/xwing_lift.gif"
+#define PAGE_EFFECT_SHOCKWAVE "./shockwave.ifr"
+#define PAGE_EFFECT_LIFT "./xwing_lift.ifr"
+#define PAGE_EFFECT_BLOW "./saber_blow.ifr"
 
-YodaLiftPage::YodaLiftPage(QWidget *parent) :
-    Page(parent),
+YodaLiftPage::YodaLiftPage(QWidget *parent, MainWindow *mainWindow) :
+    Page(parent, mainWindow),
     ui(new Ui::YodaLiftPage)
 {
     ui->setupUi(this);
@@ -18,10 +21,15 @@ YodaLiftPage::YodaLiftPage(QWidget *parent) :
     initialized = false;
     buttonSide = 0;
     currentButton = nullptr;
+
+    connect(&movie, &QMovie::frameChanged, this, &YodaLiftPage::frameHook);
 }
 
 void YodaLiftPage::showEvent(QShowEvent *event)
 {
+    if(!effects.initializeMouse(mainWindow))
+        qDebug() << "No haptic mouse plugged in!";
+
     updateTimer.start();
 
     if (initialized)
@@ -38,6 +46,8 @@ void YodaLiftPage::hideEvent(QHideEvent *event)
 {
     updateTimer.stop();
     audioPlayer.stop();
+
+    effects.clearAllEffects();
 }
 
 void YodaLiftPage::showIntro(bool startMusic)
@@ -79,6 +89,8 @@ void YodaLiftPage::showFail()
         showIntro();
     });
     initialized = true;
+
+    effects.clearAllEffects();
 }
 
 void YodaLiftPage::showSuccess()
@@ -91,12 +103,33 @@ void YodaLiftPage::showSuccess()
 
     movie.setFileName("./pages_m/xwing_recover.gif");
     movie.start();
+
+    effects.clearAllEffects();
+    effects.pushProject(PAGE_EFFECT_BLOW, "blow_up", false);
+}
+
+void YodaLiftPage::frameHook(int nframe)
+{
+    if (!isVisible())
+        return;
+
+    if (movie.fileName() == "./pages_m/xwing_recover.gif") {
+        if (nframe == 59) // Le vaisseau atterrit
+            effects.pushProject(PAGE_EFFECT_SHOCKWAVE, false);
+    }
+    if (movie.fileName() == "./pages_m/xwing_lapse.gif") {
+        if (nframe == 3) { // Le vaisseau replonge
+            effects.pushProject(PAGE_EFFECT_SHOCKWAVE, false);
+            effects.pushProject(PAGE_EFFECT_BLOW, "blow_up", false);
+        }
+    }
 }
 
 void YodaLiftPage::involveGame()
 {
     audioPlayer.setMedia(QUrl("./pages_m/xwing_lift.wav"));
     audioPlayer.play();
+    effects.pushProject(PAGE_EFFECT_LIFT, "Force", false);
 }
 
 void YodaLiftPage::placeTimedButton()
