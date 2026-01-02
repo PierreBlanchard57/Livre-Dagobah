@@ -41,3 +41,5 @@ FORMS    += mainwindow.ui \
 RESOURCES +=
 
 DISTFILES +=
+
+win32: LIBS += -lshell32
