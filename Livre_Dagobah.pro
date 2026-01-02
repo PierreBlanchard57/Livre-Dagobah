@@ -19,7 +19,8 @@ SOURCES += main.cpp\
     endpage.cpp \
     luketrainpage.cpp \
     lukeduelpage.cpp \
-    qtebutton.cpp
+    qtebutton.cpp \
+    yodaliftpage.cpp
 
 HEADERS  += mainwindow.h \
     page.h \
@@ -27,13 +28,15 @@ HEADERS  += mainwindow.h \
     endpage.h \
     luketrainpage.h \
     lukeduelpage.h \
-    qtebutton.h
+    qtebutton.h \
+    yodaliftpage.h
 
 FORMS    += mainwindow.ui \
     titlepage.ui \
     endpage.ui \
     luketrainpage.ui \
-    lukeduelpage.ui
+    lukeduelpage.ui \
+    yodaliftpage.ui
 
 RESOURCES += \
     images.qrc

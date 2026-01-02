@@ -16,11 +16,14 @@
         <file>pages_m/xwing_lift.gif</file>
         <file>pages_m/xwing_yoda.gif</file>
         <file>pages_m/xwing_idle.gif</file>
+        <file>pages_m/xwing_recover.gif</file>
         <file>pages_m/duel_states.gif</file>
         <file>pages_m/duel_enter.wav</file>
         <file>pages_m/duel_ongoing.wav</file>
         <file>pages_m/duel_echec.wav</file>
         <file>pages_m/duel_strike.wav</file>
         <file>pages_m/duel_success.wav</file>
+        <file>pages_m/xwing_idle.wav</file>
+        <file>pages_m/xwing_lift.wav</file>
     </qresource>
 </RCC>
