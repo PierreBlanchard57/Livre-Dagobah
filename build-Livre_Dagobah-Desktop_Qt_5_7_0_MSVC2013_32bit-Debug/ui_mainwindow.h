@@ -98,7 +98,7 @@ public:
 
     void retranslateUi(QMainWindow *MainWindow)
     {
-        MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", 0));
+        MainWindow->setWindowTitle(QApplication::translate("MainWindow", "Le livre de Dagobah", 0));
         pageLabel->setText(QApplication::translate("MainWindow", "Page 0/0", 0));
         nextButtton->setText(QApplication::translate("MainWindow", "\342\206\222", 0));
         prevButton->setText(QApplication::translate("MainWindow", "\342\206\220", 0));

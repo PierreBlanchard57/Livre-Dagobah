@@ -21,7 +21,8 @@ SOURCES += main.cpp\
     lukeduelpage.cpp \
     qtebutton.cpp \
     yodaliftpage.cpp \
-    effectmanager.cpp
+    effectmanager.cpp \
+    r2d2mudpage.cpp
 
 HEADERS  += mainwindow.h \
     page.h \
@@ -31,14 +32,16 @@ HEADERS  += mainwindow.h \
     lukeduelpage.h \
     qtebutton.h \
     yodaliftpage.h \
-    effectmanager.h
+    effectmanager.h \
+    r2d2mudpage.h
 
 FORMS    += mainwindow.ui \
     titlepage.ui \
     endpage.ui \
     luketrainpage.ui \
     lukeduelpage.ui \
-    yodaliftpage.ui
+    yodaliftpage.ui \
+    r2d2mudpage.ui
 
 RESOURCES +=
 

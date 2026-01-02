@@ -25,7 +25,7 @@ if(watched== ui->rock1 || watched==ui->rock2 || watched==ui->rock3){
                 QMouseEvent *mouseEvent = static_cast<QMouseEvent *>(event);
                 if (mouseEvent->button() == Qt::LeftButton) {
                         isDragging=true;
-                        changeLukePose("./luke_force.png");
+                        changeLukePose("./pages_p/luke_force.png");
                         offset=mainWindow->pos()+QPoint(40,60);
                         effects.pushProject("gravity.ifr","Compound",true);
 
@@ -34,7 +34,7 @@ if(watched== ui->rock1 || watched==ui->rock2 || watched==ui->rock3){
     if (event->type() == QEvent::MouseButtonRelease) {
                 QMouseEvent *mouseEvent = static_cast<QMouseEvent *>(event);
                 if (mouseEvent->button() == Qt::LeftButton) {
-                    changeLukePose("./luke_normal.png");
+                    changeLukePose("./pages_p/luke_normal.png");
                     isDragging=false;
                     effects.clearAllEffects();
                     if(rocksPlaced[0] && rocksPlaced[1] && rocksPlaced[2]){

@@ -2,9 +2,10 @@
 #include "ui_mainwindow.h"
 #include"page.h"
 #include "titlepage.h"
-#include "endpage.h"
-#include "luketrainpage.h"
 #include "lukeduelpage.h"
+#include "luketrainpage.h"
+#include "r2d2mudpage.h"
+#include "endpage.h"
 #include <qlayout.h>
 #include <iostream>
 #include <QDebug>
@@ -18,10 +19,11 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     //pages
+    pages.push_back(new LukeTrainPage(ui->pageContainer,this));
     pages.push_back(new TitlePage(ui->pageContainer));
     pages.push_back(new LukeDuelPage(ui->pageContainer,this));
     pages.push_back(new TitlePage(ui->pageContainer));
-    pages.push_back(new LukeTrainPage(ui->pageContainer,this));
+
     pages.push_back(new TitlePage(ui->pageContainer));
     pages.push_back(new EndPage(ui->pageContainer));
 

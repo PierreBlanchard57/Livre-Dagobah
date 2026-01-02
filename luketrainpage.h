@@ -6,6 +6,7 @@
 #include <QEvent>
 #include "page.h"
 #include "ui_luketrainpage.h"
+#include "effectmanager.h"
 class LukeTrainPage : public Page
 {
     Q_OBJECT
@@ -20,6 +21,7 @@ private:
     const double gravity=5;
     const int toleratedPos=420;
     QPoint offset;
+    EffectManager effects;
     bool eventFilter(QObject *watched, QEvent *event);
     void changeLukePose(const std::string &file);
     int determineGround(int posX,int id);

@@ -29,12 +29,12 @@ public:
         if (TitlePage->objectName().isEmpty())
             TitlePage->setObjectName(QStringLiteral("TitlePage"));
         TitlePage->resize(700, 450);
+        TitlePage->setAutoFillBackground(false);
+        TitlePage->setStyleSheet(QStringLiteral("background-color: rgb(130, 130, 130);"));
         label = new QLabel(TitlePage);
         label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(190, 140, 331, 171));
-        QFont font;
-        font.setPointSize(36);
-        label->setFont(font);
+        label->setGeometry(QRect(0, 0, 700, 450));
+        label->setPixmap(QPixmap(QString::fromUtf8("couverture.jpg")));
 
         retranslateUi(TitlePage);
 
@@ -44,7 +44,7 @@ public:
     void retranslateUi(QWidget *TitlePage)
     {
         TitlePage->setWindowTitle(QApplication::translate("TitlePage", "Form", 0));
-        label->setText(QApplication::translate("TitlePage", "Je suis un titre", 0));
+        label->setText(QString());
     } // retranslateUi
 
 };

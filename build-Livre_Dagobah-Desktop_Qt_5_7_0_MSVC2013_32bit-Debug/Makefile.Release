@@ -14,10 +14,10 @@ CXX           = cl
 DEFINES       = -DUNICODE -DWIN32 -DQT_QML_DEBUG -DQT_NO_DEBUG -DQT_MULTIMEDIA_LIB -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DNDEBUG
 CFLAGS        = -nologo -Zc:wchar_t -FS -O2 -MD -Zc:strictStrings -W3 $(DEFINES)
 CXXFLAGS      = -nologo -Zc:wchar_t -FS -O2 -MD -Zc:strictStrings -GR -W3 -w34100 -w34189 -w44996 -EHsc $(DEFINES)
-INCPATH       = -I..\..\Livre_Dagobah -I. -IC:\Qt\Qt5.7.0\5.7\msvc2013\include -IC:\Qt\Qt5.7.0\5.7\msvc2013\include\QtMultimedia -IC:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets -IC:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui -IC:\Qt\Qt5.7.0\5.7\msvc2013\include\QtANGLE -IC:\Qt\Qt5.7.0\5.7\msvc2013\include\QtNetwork -IC:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore -Irelease -I. -IC:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\win32-msvc2013 
+INCPATH       = -I..\..\Livre_Dagobah -I. -I"C:\Program Files\Immersion Corporation\IFC23\inc" -IC:\Qt\Qt5.7.0\5.7\msvc2013\include -IC:\Qt\Qt5.7.0\5.7\msvc2013\include\QtMultimedia -IC:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets -IC:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui -IC:\Qt\Qt5.7.0\5.7\msvc2013\include\QtANGLE -IC:\Qt\Qt5.7.0\5.7\msvc2013\include\QtNetwork -IC:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore -Irelease -I. -IC:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\win32-msvc2013 
 LINKER        = link
 LFLAGS        = /NOLOGO /DYNAMICBASE /NXCOMPAT /INCREMENTAL:NO /SUBSYSTEM:WINDOWS "/MANIFESTDEPENDENCY:type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' publicKeyToken='6595b64144ccf1df' language='*' processorArchitecture='*'"
-LIBS          = /LIBPATH:C:\Qt\Qt5.7.0\5.7\msvc2013\lib C:\Qt\Qt5.7.0\5.7\msvc2013\lib\qtmain.lib /LIBPATH:C:\utils\postgresql\pgsql\lib /LIBPATH:C:\utils\my_sql\my_sql\lib shell32.lib C:\Qt\Qt5.7.0\5.7\msvc2013\lib\Qt5Multimedia.lib C:\Qt\Qt5.7.0\5.7\msvc2013\lib\Qt5Widgets.lib C:\Qt\Qt5.7.0\5.7\msvc2013\lib\Qt5Gui.lib C:\Qt\Qt5.7.0\5.7\msvc2013\lib\Qt5Network.lib C:\Qt\Qt5.7.0\5.7\msvc2013\lib\Qt5Core.lib 
+LIBS          = /LIBPATH:C:\Qt\Qt5.7.0\5.7\msvc2013\lib C:\Qt\Qt5.7.0\5.7\msvc2013\lib\qtmain.lib /LIBPATH:C:\utils\postgresql\pgsql\lib /LIBPATH:C:\utils\my_sql\my_sql\lib shell32.lib /LIBPATH:"C:\Program Files\Immersion Corporation\IFC23\lib" "C:\Program Files\Immersion Corporation\IFC23\lib\IFC23.lib" C:\Qt\Qt5.7.0\5.7\msvc2013\lib\Qt5Multimedia.lib C:\Qt\Qt5.7.0\5.7\msvc2013\lib\Qt5Widgets.lib C:\Qt\Qt5.7.0\5.7\msvc2013\lib\Qt5Gui.lib C:\Qt\Qt5.7.0\5.7\msvc2013\lib\Qt5Network.lib C:\Qt\Qt5.7.0\5.7\msvc2013\lib\Qt5Core.lib 
 QMAKE         = C:\Qt\Qt5.7.0\5.7\msvc2013\bin\qmake.exe
 IDC           = idc
 IDL           = midl
@@ -51,14 +51,18 @@ SOURCES       = ..\main.cpp \
 		..\luketrainpage.cpp \
 		..\lukeduelpage.cpp \
 		..\qtebutton.cpp \
-		..\yodaliftpage.cpp release\moc_mainwindow.cpp \
+		..\yodaliftpage.cpp \
+		..\effectmanager.cpp \
+		..\r2d2mudpage.cpp release\moc_mainwindow.cpp \
 		release\moc_page.cpp \
 		release\moc_titlepage.cpp \
 		release\moc_endpage.cpp \
 		release\moc_luketrainpage.cpp \
 		release\moc_lukeduelpage.cpp \
 		release\moc_qtebutton.cpp \
-		release\moc_yodaliftpage.cpp
+		release\moc_yodaliftpage.cpp \
+		release\moc_effectmanager.cpp \
+		release\moc_r2d2mudpage.cpp
 OBJECTS       = release\main.obj \
 		release\mainwindow.obj \
 		release\page.obj \
@@ -68,6 +72,8 @@ OBJECTS       = release\main.obj \
 		release\lukeduelpage.obj \
 		release\qtebutton.obj \
 		release\yodaliftpage.obj \
+		release\effectmanager.obj \
+		release\r2d2mudpage.obj \
 		release\moc_mainwindow.obj \
 		release\moc_page.obj \
 		release\moc_titlepage.obj \
@@ -75,7 +81,9 @@ OBJECTS       = release\main.obj \
 		release\moc_luketrainpage.obj \
 		release\moc_lukeduelpage.obj \
 		release\moc_qtebutton.obj \
-		release\moc_yodaliftpage.obj
+		release\moc_yodaliftpage.obj \
+		release\moc_effectmanager.obj \
+		release\moc_r2d2mudpage.obj
 
 DIST          =  ..\mainwindow.h \
 		..\page.h \
@@ -84,7 +92,9 @@ DIST          =  ..\mainwindow.h \
 		..\luketrainpage.h \
 		..\lukeduelpage.h \
 		..\qtebutton.h \
-		..\yodaliftpage.h ..\main.cpp \
+		..\yodaliftpage.h \
+		..\effectmanager.h \
+		..\r2d2mudpage.h ..\main.cpp \
 		..\mainwindow.cpp \
 		..\page.cpp \
 		..\titlepage.cpp \
@@ -92,7 +102,9 @@ DIST          =  ..\mainwindow.h \
 		..\luketrainpage.cpp \
 		..\lukeduelpage.cpp \
 		..\qtebutton.cpp \
-		..\yodaliftpage.cpp
+		..\yodaliftpage.cpp \
+		..\effectmanager.cpp \
+		..\r2d2mudpage.cpp
 QMAKE_TARGET  = Livre_Dagobah
 DESTDIR        = release\ #avoid trailing-slash linebreak
 TARGET         = Livre_Dagobah.exe
@@ -167,7 +179,7 @@ DESTDIR_TARGET = release\Livre_Dagobah.exe
 first: all
 all: Makefile.Release  $(DESTDIR_TARGET)
 
-$(DESTDIR_TARGET): ui_mainwindow.h ui_titlepage.h ui_endpage.h ui_luketrainpage.h ui_lukeduelpage.h ui_yodaliftpage.h $(OBJECTS) 
+$(DESTDIR_TARGET): ui_mainwindow.h ui_titlepage.h ui_endpage.h ui_luketrainpage.h ui_lukeduelpage.h ui_yodaliftpage.h ui_r2d2mudpage.h $(OBJECTS) 
 	$(LINKER) $(LFLAGS) /MANIFEST:embed /OUT:$(DESTDIR_TARGET) @<<
 $(OBJECTS) $(LIBS)
 <<
@@ -181,7 +193,7 @@ dist:
 	$(ZIP) Livre_Dagobah.zip $(SOURCES) $(DIST) ..\Livre_Dagobah.pro C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\features\spec_pre.prf C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\common\angle.conf C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\common\msvc-base.conf C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\common\msvc-desktop.conf C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\qconfig.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_3dcore.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_3dcore_private.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_3dextras.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_3dextras_private.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_3dinput.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_3dinput_private.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_3dlogic.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_3dlogic_private.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_3dquick.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_3dquick_private.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_3dquickextras.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_3dquickextras_private.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_3dquickinput.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_3dquickinput_private.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_3dquickrender.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_3dquickrender_private.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_3drender.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_3drender_private.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_axbase.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_axbase_private.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_axcontainer.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_axcontainer_private.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_axserver.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_axserver_private.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_bluetooth.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_bluetooth_private.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_bootstrap_private.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_clucene_private.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_concurrent.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_concurrent_private.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_core.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_core_private.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_dbus.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_dbus_private.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_designer.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_designer_private.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_designercomponents_private.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_gamepad.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_gamepad_private.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_gui.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_gui_private.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_help.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_help_private.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_location.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_location_private.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_multimedia.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_multimedia_private.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_multimediawidgets.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_multimediawidgets_private.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_network.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_network_private.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_nfc.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_nfc_private.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_opengl.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_opengl_private.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_openglextensions.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_openglextensions_private.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_packetprotocol_private.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_platformsupport_private.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_positioning.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_positioning_private.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_printsupport.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_printsupport_private.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_purchasing.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_purchasing_private.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_qml.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_qml_private.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_qmldebug_private.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_qmldevtools_private.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_qmltest.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_qmltest_private.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_qtmultimediaquicktools_private.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_quick.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_quick_private.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_quickcontrols2.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_quickcontrols2_private.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_quickparticles_private.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_quicktemplates2_private.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_quickwidgets.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_quickwidgets_private.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_script.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_script_private.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_scripttools.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_scripttools_private.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_scxml.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_scxml_private.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_sensors.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_sensors_private.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_serialbus.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_serialbus_private.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_serialport.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_serialport_private.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_sql.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_sql_private.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_svg.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_svg_private.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_testlib.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_testlib_private.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_uiplugin.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_uitools.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_uitools_private.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_webchannel.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_webchannel_private.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_webengine.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_webengine_private.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_webenginecore.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_webenginecore_private.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_webenginecoreheaders_private.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_webenginewidgets.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_webenginewidgets_private.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_websockets.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_websockets_private.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_webview.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_webview_private.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_widgets.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_widgets_private.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_winextras.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_winextras_private.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_xml.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_xml_private.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_xmlpatterns.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_xmlpatterns_private.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\modules\qt_lib_zlib_private.pri C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\features\qt_functions.prf C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\features\qt_config.prf C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\features\win32\qt_config.prf C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\win32-msvc2013\qmake.conf C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\features\spec_post.prf C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\features\exclusive_builds.prf C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\features\default_pre.prf C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\features\win32\default_pre.prf C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\features\resolve_config.prf C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\features\exclusive_builds_post.prf C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\features\default_post.prf C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\features\build_pass.prf C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\features\qml_debug.prf C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\features\win32\rtti.prf C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\features\precompile_header.prf C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\features\warn_on.prf C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\features\qt.prf C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\features\resources.prf C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\features\moc.prf C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\features\win32\opengl.prf C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\features\uic.prf C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\features\file_copies.prf C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\features\win32\windows.prf C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\features\testcase_targets.prf C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\features\exceptions.prf C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\features\yacc.prf C:\Qt\Qt5.7.0\5.7\msvc2013\mkspecs\features\lex.prf ..\Livre_Dagobah.pro C:\Qt\Qt5.7.0\5.7\msvc2013\lib\qtmain.prl C:\Qt\Qt5.7.0\5.7\msvc2013\lib\Qt5Multimedia.prl C:\Qt\Qt5.7.0\5.7\msvc2013\lib\Qt5Widgets.prl C:\Qt\Qt5.7.0\5.7\msvc2013\lib\Qt5Gui.prl C:\Qt\Qt5.7.0\5.7\msvc2013\lib\Qt5Network.prl C:\Qt\Qt5.7.0\5.7\msvc2013\lib\Qt5Core.prl  NO_PCH_SOURCES RESOURCES HEADERS SOURCES OBJECTIVE_SOURCES FORMS YACCSOURCES YACCSOURCES LEXSOURCES 
 
 clean: compiler_clean 
-	-$(DEL_FILE) release\main.obj release\mainwindow.obj release\page.obj release\titlepage.obj release\endpage.obj release\luketrainpage.obj release\lukeduelpage.obj release\qtebutton.obj release\yodaliftpage.obj release\moc_mainwindow.obj release\moc_page.obj release\moc_titlepage.obj release\moc_endpage.obj release\moc_luketrainpage.obj release\moc_lukeduelpage.obj release\moc_qtebutton.obj release\moc_yodaliftpage.obj
+	-$(DEL_FILE) release\main.obj release\mainwindow.obj release\page.obj release\titlepage.obj release\endpage.obj release\luketrainpage.obj release\lukeduelpage.obj release\qtebutton.obj release\yodaliftpage.obj release\effectmanager.obj release\r2d2mudpage.obj release\moc_mainwindow.obj release\moc_page.obj release\moc_titlepage.obj release\moc_endpage.obj release\moc_luketrainpage.obj release\moc_lukeduelpage.obj release\moc_qtebutton.obj release\moc_yodaliftpage.obj release\moc_effectmanager.obj release\moc_r2d2mudpage.obj
 	-$(DEL_FILE) release\Livre_Dagobah.exp
 
 distclean: clean 
@@ -201,9 +213,9 @@ compiler_no_pch_compiler_make_all:
 compiler_no_pch_compiler_clean:
 compiler_rcc_make_all:
 compiler_rcc_clean:
-compiler_moc_header_make_all: release\moc_mainwindow.cpp release\moc_page.cpp release\moc_titlepage.cpp release\moc_endpage.cpp release\moc_luketrainpage.cpp release\moc_lukeduelpage.cpp release\moc_qtebutton.cpp release\moc_yodaliftpage.cpp
+compiler_moc_header_make_all: release\moc_mainwindow.cpp release\moc_page.cpp release\moc_titlepage.cpp release\moc_endpage.cpp release\moc_luketrainpage.cpp release\moc_lukeduelpage.cpp release\moc_qtebutton.cpp release\moc_yodaliftpage.cpp release\moc_effectmanager.cpp release\moc_r2d2mudpage.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) release\moc_mainwindow.cpp release\moc_page.cpp release\moc_titlepage.cpp release\moc_endpage.cpp release\moc_luketrainpage.cpp release\moc_lukeduelpage.cpp release\moc_qtebutton.cpp release\moc_yodaliftpage.cpp
+	-$(DEL_FILE) release\moc_mainwindow.cpp release\moc_page.cpp release\moc_titlepage.cpp release\moc_endpage.cpp release\moc_luketrainpage.cpp release\moc_lukeduelpage.cpp release\moc_qtebutton.cpp release\moc_yodaliftpage.cpp release\moc_effectmanager.cpp release\moc_r2d2mudpage.cpp
 release\moc_mainwindow.cpp: C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\QMainWindow \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qmainwindow.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qwidget.h \
@@ -306,7 +318,7 @@ release\moc_mainwindow.cpp: C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\QMainWi
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qicon.h \
 		..\mainwindow.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\bin\moc.exe
-	C:\Qt\Qt5.7.0\5.7\msvc2013\bin\moc.exe $(DEFINES) -D_MSC_VER=1800 -D_WIN32 -IC:/Qt/Qt5.7.0/5.7/msvc2013/mkspecs/win32-msvc2013 -IG:/Livre_Dagobah -IC:/Qt/Qt5.7.0/5.7/msvc2013/include -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtMultimedia -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtWidgets -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtGui -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtANGLE -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtNetwork -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtCore -I. ..\mainwindow.h -o release\moc_mainwindow.cpp
+	C:\Qt\Qt5.7.0\5.7\msvc2013\bin\moc.exe $(DEFINES) -D_MSC_VER=1800 -D_WIN32 -IC:/Qt/Qt5.7.0/5.7/msvc2013/mkspecs/win32-msvc2013 -IG:/Livre_Dagobah -I"C:/Program Files/Immersion Corporation/IFC23/inc" -IC:/Qt/Qt5.7.0/5.7/msvc2013/include -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtMultimedia -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtWidgets -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtGui -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtANGLE -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtNetwork -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtCore -I. ..\mainwindow.h -o release\moc_mainwindow.cpp
 
 release\moc_page.cpp: C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\QWidget \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qwidget.h \
@@ -412,7 +424,7 @@ release\moc_page.cpp: C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\QWidget \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qicon.h \
 		..\page.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\bin\moc.exe
-	C:\Qt\Qt5.7.0\5.7\msvc2013\bin\moc.exe $(DEFINES) -D_MSC_VER=1800 -D_WIN32 -IC:/Qt/Qt5.7.0/5.7/msvc2013/mkspecs/win32-msvc2013 -IG:/Livre_Dagobah -IC:/Qt/Qt5.7.0/5.7/msvc2013/include -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtMultimedia -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtWidgets -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtGui -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtANGLE -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtNetwork -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtCore -I. ..\page.h -o release\moc_page.cpp
+	C:\Qt\Qt5.7.0\5.7\msvc2013\bin\moc.exe $(DEFINES) -D_MSC_VER=1800 -D_WIN32 -IC:/Qt/Qt5.7.0/5.7/msvc2013/mkspecs/win32-msvc2013 -IG:/Livre_Dagobah -I"C:/Program Files/Immersion Corporation/IFC23/inc" -IC:/Qt/Qt5.7.0/5.7/msvc2013/include -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtMultimedia -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtWidgets -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtGui -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtANGLE -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtNetwork -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtCore -I. ..\page.h -o release\moc_page.cpp
 
 release\moc_titlepage.cpp: C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\QWidget \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qwidget.h \
@@ -511,6 +523,25 @@ release\moc_titlepage.cpp: C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\QWidget 
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qfiledevice.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qvector2d.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qtouchdevice.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtMultimedia\QMediaPlayer \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtMultimedia\qmediaplayer.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtMultimedia\qmediaobject.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtMultimedia\qtmultimediadefs.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtMultimedia\qmultimedia.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtMultimedia\qmediacontent.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtMultimedia\qmediaresource.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtNetwork\qnetworkrequest.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\QSharedDataPointer \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\QString \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\QUrl \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\QVariant \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtMultimedia\qmediaenumdebug.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qmetaobject.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtMultimedia\qaudio.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtNetwork\qnetworkconfiguration.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtMultimedia\QMediaPlaylist \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtMultimedia\qmediaplaylist.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtMultimedia\qmediabindableinterface.h \
 		..\page.h \
 		..\mainwindow.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\QMainWindow \
@@ -518,7 +549,6 @@ release\moc_titlepage.cpp: C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\QWidget 
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qtabwidget.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qicon.h \
 		ui_titlepage.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\QVariant \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\QAction \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qaction.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qactiongroup.h \
@@ -552,7 +582,7 @@ release\moc_titlepage.cpp: C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\QWidget 
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qlabel.h \
 		..\titlepage.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\bin\moc.exe
-	C:\Qt\Qt5.7.0\5.7\msvc2013\bin\moc.exe $(DEFINES) -D_MSC_VER=1800 -D_WIN32 -IC:/Qt/Qt5.7.0/5.7/msvc2013/mkspecs/win32-msvc2013 -IG:/Livre_Dagobah -IC:/Qt/Qt5.7.0/5.7/msvc2013/include -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtMultimedia -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtWidgets -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtGui -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtANGLE -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtNetwork -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtCore -I. ..\titlepage.h -o release\moc_titlepage.cpp
+	C:\Qt\Qt5.7.0\5.7\msvc2013\bin\moc.exe $(DEFINES) -D_MSC_VER=1800 -D_WIN32 -IC:/Qt/Qt5.7.0/5.7/msvc2013/mkspecs/win32-msvc2013 -IG:/Livre_Dagobah -I"C:/Program Files/Immersion Corporation/IFC23/inc" -IC:/Qt/Qt5.7.0/5.7/msvc2013/include -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtMultimedia -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtWidgets -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtGui -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtANGLE -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtNetwork -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtCore -I. ..\titlepage.h -o release\moc_titlepage.cpp
 
 release\moc_endpage.cpp: C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\QWidget \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qwidget.h \
@@ -692,7 +722,7 @@ release\moc_endpage.cpp: C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\QWidget \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qlabel.h \
 		..\endpage.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\bin\moc.exe
-	C:\Qt\Qt5.7.0\5.7\msvc2013\bin\moc.exe $(DEFINES) -D_MSC_VER=1800 -D_WIN32 -IC:/Qt/Qt5.7.0/5.7/msvc2013/mkspecs/win32-msvc2013 -IG:/Livre_Dagobah -IC:/Qt/Qt5.7.0/5.7/msvc2013/include -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtMultimedia -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtWidgets -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtGui -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtANGLE -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtNetwork -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtCore -I. ..\endpage.h -o release\moc_endpage.cpp
+	C:\Qt\Qt5.7.0\5.7\msvc2013\bin\moc.exe $(DEFINES) -D_MSC_VER=1800 -D_WIN32 -IC:/Qt/Qt5.7.0/5.7/msvc2013/mkspecs/win32-msvc2013 -IG:/Livre_Dagobah -I"C:/Program Files/Immersion Corporation/IFC23/inc" -IC:/Qt/Qt5.7.0/5.7/msvc2013/include -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtMultimedia -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtWidgets -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtGui -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtANGLE -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtNetwork -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtCore -I. ..\endpage.h -o release\moc_endpage.cpp
 
 release\moc_luketrainpage.cpp: C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\QWidget \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qwidget.h \
@@ -832,9 +862,16 @@ release\moc_luketrainpage.cpp: C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\QWid
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qrubberband.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\QLabel \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qlabel.h \
+		..\effectmanager.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\QWindow \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qwindow.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\QMargins \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\QRect \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qsurface.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qsurfaceformat.h \
 		..\luketrainpage.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\bin\moc.exe
-	C:\Qt\Qt5.7.0\5.7\msvc2013\bin\moc.exe $(DEFINES) -D_MSC_VER=1800 -D_WIN32 -IC:/Qt/Qt5.7.0/5.7/msvc2013/mkspecs/win32-msvc2013 -IG:/Livre_Dagobah -IC:/Qt/Qt5.7.0/5.7/msvc2013/include -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtMultimedia -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtWidgets -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtGui -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtANGLE -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtNetwork -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtCore -I. ..\luketrainpage.h -o release\moc_luketrainpage.cpp
+	C:\Qt\Qt5.7.0\5.7\msvc2013\bin\moc.exe $(DEFINES) -D_MSC_VER=1800 -D_WIN32 -IC:/Qt/Qt5.7.0/5.7/msvc2013/mkspecs/win32-msvc2013 -IG:/Livre_Dagobah -I"C:/Program Files/Immersion Corporation/IFC23/inc" -IC:/Qt/Qt5.7.0/5.7/msvc2013/include -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtMultimedia -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtWidgets -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtGui -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtANGLE -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtNetwork -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtCore -I. ..\luketrainpage.h -o release\moc_luketrainpage.cpp
 
 release\moc_lukeduelpage.cpp: C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\QWidget \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qwidget.h \
@@ -975,9 +1012,18 @@ release\moc_lukeduelpage.cpp: C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\QWidg
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\QMainWindow \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qmainwindow.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qtabwidget.h \
+		..\effectmanager.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\QObject \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\QWindow \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qwindow.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\QEvent \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\QMargins \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\QRect \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qsurface.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qsurfaceformat.h \
 		..\lukeduelpage.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\bin\moc.exe
-	C:\Qt\Qt5.7.0\5.7\msvc2013\bin\moc.exe $(DEFINES) -D_MSC_VER=1800 -D_WIN32 -IC:/Qt/Qt5.7.0/5.7/msvc2013/mkspecs/win32-msvc2013 -IG:/Livre_Dagobah -IC:/Qt/Qt5.7.0/5.7/msvc2013/include -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtMultimedia -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtWidgets -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtGui -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtANGLE -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtNetwork -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtCore -I. ..\lukeduelpage.h -o release\moc_lukeduelpage.cpp
+	C:\Qt\Qt5.7.0\5.7\msvc2013\bin\moc.exe $(DEFINES) -D_MSC_VER=1800 -D_WIN32 -IC:/Qt/Qt5.7.0/5.7/msvc2013/mkspecs/win32-msvc2013 -IG:/Livre_Dagobah -I"C:/Program Files/Immersion Corporation/IFC23/inc" -IC:/Qt/Qt5.7.0/5.7/msvc2013/include -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtMultimedia -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtWidgets -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtGui -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtANGLE -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtNetwork -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtCore -I. ..\lukeduelpage.h -o release\moc_lukeduelpage.cpp
 
 release\moc_qtebutton.cpp: C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\QPushButton \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qpushbutton.h \
@@ -1083,7 +1129,7 @@ release\moc_qtebutton.cpp: C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\QPushBut
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qelapsedtimer.h \
 		..\qtebutton.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\bin\moc.exe
-	C:\Qt\Qt5.7.0\5.7\msvc2013\bin\moc.exe $(DEFINES) -D_MSC_VER=1800 -D_WIN32 -IC:/Qt/Qt5.7.0/5.7/msvc2013/mkspecs/win32-msvc2013 -IG:/Livre_Dagobah -IC:/Qt/Qt5.7.0/5.7/msvc2013/include -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtMultimedia -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtWidgets -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtGui -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtANGLE -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtNetwork -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtCore -I. ..\qtebutton.h -o release\moc_qtebutton.cpp
+	C:\Qt\Qt5.7.0\5.7\msvc2013\bin\moc.exe $(DEFINES) -D_MSC_VER=1800 -D_WIN32 -IC:/Qt/Qt5.7.0/5.7/msvc2013/mkspecs/win32-msvc2013 -IG:/Livre_Dagobah -I"C:/Program Files/Immersion Corporation/IFC23/inc" -IC:/Qt/Qt5.7.0/5.7/msvc2013/include -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtMultimedia -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtWidgets -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtGui -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtANGLE -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtNetwork -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtCore -I. ..\qtebutton.h -o release\moc_qtebutton.cpp
 
 release\moc_yodaliftpage.cpp: C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\QWidget \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qwidget.h \
@@ -1215,27 +1261,286 @@ release\moc_yodaliftpage.cpp: C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\QWidg
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtMultimedia\QMediaPlaylist \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtMultimedia\qmediaplaylist.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtMultimedia\qmediabindableinterface.h \
+		..\effectmanager.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\QObject \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\QWindow \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qwindow.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\QEvent \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\QMargins \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\QRect \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qsurface.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qsurfaceformat.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qicon.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\QMainWindow \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qmainwindow.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qtabwidget.h \
 		..\qtebutton.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\QPushButton \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qpushbutton.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qabstractbutton.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qicon.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\QElapsedTimer \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qelapsedtimer.h \
+		..\page.h \
+		..\mainwindow.h \
+		..\yodaliftpage.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\bin\moc.exe
+	C:\Qt\Qt5.7.0\5.7\msvc2013\bin\moc.exe $(DEFINES) -D_MSC_VER=1800 -D_WIN32 -IC:/Qt/Qt5.7.0/5.7/msvc2013/mkspecs/win32-msvc2013 -IG:/Livre_Dagobah -I"C:/Program Files/Immersion Corporation/IFC23/inc" -IC:/Qt/Qt5.7.0/5.7/msvc2013/include -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtMultimedia -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtWidgets -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtGui -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtANGLE -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtNetwork -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtCore -I. ..\yodaliftpage.h -o release\moc_yodaliftpage.cpp
+
+release\moc_effectmanager.cpp: C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\QObject \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qobject.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qobjectdefs.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qnamespace.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qglobal.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qconfig.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qfeatures.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qsystemdetection.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qprocessordetection.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qcompilerdetection.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qtypeinfo.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qtypetraits.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qisenum.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qsysinfo.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qlogging.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qflags.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qatomic.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qbasicatomic.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qatomic_bootstrap.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qgenericatomic.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qatomic_cxx11.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qatomic_msvc.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qglobalstatic.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qmutex.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qnumeric.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qversiontagging.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qobjectdefs_impl.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qstring.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qchar.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qbytearray.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qrefcount.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qarraydata.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qstringbuilder.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qlist.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qalgorithms.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qiterator.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qhashfunctions.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qpair.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qbytearraylist.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qstringlist.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qregexp.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qstringmatcher.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qcoreevent.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qscopedpointer.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qmetatype.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qvarlengtharray.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qcontainerfwd.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qobject_impl.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\QWindow \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qwindow.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\QEvent \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\QMargins \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qmargins.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\QRect \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qrect.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qsize.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qpoint.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qsurface.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qsurfaceformat.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qwindowdefs.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qwindowdefs_win.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qicon.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qpixmap.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qpaintdevice.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qcolor.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qrgb.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qrgba64.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qsharedpointer.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qshareddata.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qhash.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qsharedpointer_impl.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qimage.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qpixelformat.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qtransform.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qmatrix.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qpolygon.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qvector.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qregion.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qdatastream.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qiodevice.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qline.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qpainterpath.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qcursor.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\QMainWindow \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qmainwindow.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qwidget.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qpalette.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qbrush.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qfont.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qfontmetrics.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qfontinfo.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qsizepolicy.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qkeysequence.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qevent.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qvariant.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qmap.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qdebug.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qtextstream.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qlocale.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qset.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qcontiguouscache.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qurl.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qurlquery.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qfile.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qfiledevice.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qvector2d.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qtouchdevice.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qtabwidget.h \
+		..\effectmanager.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\bin\moc.exe
+	C:\Qt\Qt5.7.0\5.7\msvc2013\bin\moc.exe $(DEFINES) -D_MSC_VER=1800 -D_WIN32 -IC:/Qt/Qt5.7.0/5.7/msvc2013/mkspecs/win32-msvc2013 -IG:/Livre_Dagobah -I"C:/Program Files/Immersion Corporation/IFC23/inc" -IC:/Qt/Qt5.7.0/5.7/msvc2013/include -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtMultimedia -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtWidgets -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtGui -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtANGLE -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtNetwork -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtCore -I. ..\effectmanager.h -o release\moc_effectmanager.cpp
+
+release\moc_r2d2mudpage.cpp: C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\QWidget \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qwidget.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qwindowdefs.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qglobal.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qconfig.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qfeatures.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qsystemdetection.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qprocessordetection.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qcompilerdetection.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qtypeinfo.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qtypetraits.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qisenum.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qsysinfo.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qlogging.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qflags.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qatomic.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qbasicatomic.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qatomic_bootstrap.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qgenericatomic.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qatomic_cxx11.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qatomic_msvc.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qglobalstatic.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qmutex.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qnumeric.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qversiontagging.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qobjectdefs.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qnamespace.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qobjectdefs_impl.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qwindowdefs_win.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qobject.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qstring.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qchar.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qbytearray.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qrefcount.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qarraydata.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qstringbuilder.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qlist.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qalgorithms.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qiterator.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qhashfunctions.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qpair.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qbytearraylist.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qstringlist.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qregexp.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qstringmatcher.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qcoreevent.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qscopedpointer.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qmetatype.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qvarlengtharray.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qcontainerfwd.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qobject_impl.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qmargins.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qpaintdevice.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qrect.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qsize.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qpoint.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qpalette.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qcolor.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qrgb.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qrgba64.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qbrush.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qvector.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qmatrix.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qpolygon.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qregion.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qdatastream.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qiodevice.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qline.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qtransform.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qpainterpath.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qimage.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qpixelformat.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qpixmap.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qsharedpointer.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qshareddata.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qhash.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qsharedpointer_impl.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qfont.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qfontmetrics.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qfontinfo.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qsizepolicy.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qcursor.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qkeysequence.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qevent.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qvariant.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qmap.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qdebug.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qtextstream.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qlocale.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qset.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qcontiguouscache.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qurl.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qurlquery.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qfile.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qfiledevice.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qvector2d.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qtouchdevice.h \
 		..\page.h \
 		..\mainwindow.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\QMainWindow \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qmainwindow.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qtabwidget.h \
-		..\yodaliftpage.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qicon.h \
+		ui_r2d2mudpage.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\QVariant \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\QAction \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qaction.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qactiongroup.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\QApplication \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qapplication.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qcoreapplication.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qeventloop.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qdesktopwidget.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qguiapplication.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qinputmethod.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\QButtonGroup \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qbuttongroup.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\QHeaderView \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qheaderview.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qabstractitemview.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qabstractscrollarea.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qframe.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qabstractitemmodel.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qitemselectionmodel.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qabstractitemdelegate.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qstyleoption.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qabstractspinbox.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qvalidator.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qregularexpression.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qslider.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qabstractslider.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qstyle.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qtabbar.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qrubberband.h \
+		..\r2d2mudpage.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\bin\moc.exe
-	C:\Qt\Qt5.7.0\5.7\msvc2013\bin\moc.exe $(DEFINES) -D_MSC_VER=1800 -D_WIN32 -IC:/Qt/Qt5.7.0/5.7/msvc2013/mkspecs/win32-msvc2013 -IG:/Livre_Dagobah -IC:/Qt/Qt5.7.0/5.7/msvc2013/include -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtMultimedia -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtWidgets -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtGui -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtANGLE -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtNetwork -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtCore -I. ..\yodaliftpage.h -o release\moc_yodaliftpage.cpp
+	C:\Qt\Qt5.7.0\5.7\msvc2013\bin\moc.exe $(DEFINES) -D_MSC_VER=1800 -D_WIN32 -IC:/Qt/Qt5.7.0/5.7/msvc2013/mkspecs/win32-msvc2013 -IG:/Livre_Dagobah -I"C:/Program Files/Immersion Corporation/IFC23/inc" -IC:/Qt/Qt5.7.0/5.7/msvc2013/include -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtMultimedia -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtWidgets -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtGui -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtANGLE -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtNetwork -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtCore -I. ..\r2d2mudpage.h -o release\moc_r2d2mudpage.cpp
 
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
-compiler_uic_make_all: ui_mainwindow.h ui_titlepage.h ui_endpage.h ui_luketrainpage.h ui_lukeduelpage.h ui_yodaliftpage.h
+compiler_uic_make_all: ui_mainwindow.h ui_titlepage.h ui_endpage.h ui_luketrainpage.h ui_lukeduelpage.h ui_yodaliftpage.h ui_r2d2mudpage.h
 compiler_uic_clean:
-	-$(DEL_FILE) ui_mainwindow.h ui_titlepage.h ui_endpage.h ui_luketrainpage.h ui_lukeduelpage.h ui_yodaliftpage.h
+	-$(DEL_FILE) ui_mainwindow.h ui_titlepage.h ui_endpage.h ui_luketrainpage.h ui_lukeduelpage.h ui_yodaliftpage.h ui_r2d2mudpage.h
 ui_mainwindow.h: ..\mainwindow.ui \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\bin\uic.exe
 	C:\Qt\Qt5.7.0\5.7\msvc2013\bin\uic.exe ..\mainwindow.ui -o ui_mainwindow.h
@@ -1259,6 +1564,10 @@ ui_lukeduelpage.h: ..\lukeduelpage.ui \
 ui_yodaliftpage.h: ..\yodaliftpage.ui \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\bin\uic.exe
 	C:\Qt\Qt5.7.0\5.7\msvc2013\bin\uic.exe ..\yodaliftpage.ui -o ui_yodaliftpage.h
+
+ui_r2d2mudpage.h: ..\r2d2mudpage.ui \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\bin\uic.exe
+	C:\Qt\Qt5.7.0\5.7\msvc2013\bin\uic.exe ..\r2d2mudpage.ui -o ui_r2d2mudpage.h
 
 compiler_yacc_decl_make_all:
 compiler_yacc_decl_clean:
@@ -1533,23 +1842,6 @@ release\mainwindow.obj: ..\mainwindow.cpp ../mainwindow.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\QWidget \
 		../page.h \
 		../titlepage.h \
-		ui_titlepage.h \
-		../endpage.h \
-		ui_endpage.h \
-		../luketrainpage.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\QObject \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\QEvent \
-		ui_luketrainpage.h \
-		../lukeduelpage.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\QMovie \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qmovie.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qimagereader.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qimageiohandler.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qplugin.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qpointer.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qjsonobject.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qjsonvalue.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qfactoryinterface.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtMultimedia\QMediaPlayer \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtMultimedia\qmediaplayer.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtMultimedia\qmediaobject.h \
@@ -1568,9 +1860,35 @@ release\mainwindow.obj: ..\mainwindow.cpp ../mainwindow.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtMultimedia\QMediaPlaylist \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtMultimedia\qmediaplaylist.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtMultimedia\qmediabindableinterface.h \
+		ui_titlepage.h \
+		../lukeduelpage.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\QMovie \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qmovie.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qimagereader.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qimageiohandler.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qplugin.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qpointer.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qjsonobject.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qjsonvalue.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qfactoryinterface.h \
 		../qtebutton.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\QElapsedTimer \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qelapsedtimer.h \
+		../effectmanager.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\QObject \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\QWindow \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qwindow.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\QEvent \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\QMargins \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\QRect \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qsurface.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qsurfaceformat.h \
+		../luketrainpage.h \
+		ui_luketrainpage.h \
+		../r2d2mudpage.h \
+		ui_r2d2mudpage.h \
+		../endpage.h \
+		ui_endpage.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\QDebug
 
 release\page.obj: ..\page.cpp ../page.h \
@@ -1675,7 +1993,8 @@ release\page.obj: ..\page.cpp ../page.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\QMainWindow \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qmainwindow.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qtabwidget.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qicon.h
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qicon.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\QDebug
 
 release\titlepage.obj: ..\titlepage.cpp ../titlepage.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\QWidget \
@@ -1775,6 +2094,25 @@ release\titlepage.obj: ..\titlepage.cpp ../titlepage.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qfiledevice.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qvector2d.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qtouchdevice.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtMultimedia\QMediaPlayer \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtMultimedia\qmediaplayer.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtMultimedia\qmediaobject.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtMultimedia\qtmultimediadefs.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtMultimedia\qmultimedia.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtMultimedia\qmediacontent.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtMultimedia\qmediaresource.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtNetwork\qnetworkrequest.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\QSharedDataPointer \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\QString \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\QUrl \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\QVariant \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtMultimedia\qmediaenumdebug.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qmetaobject.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtMultimedia\qaudio.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtNetwork\qnetworkconfiguration.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtMultimedia\QMediaPlaylist \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtMultimedia\qmediaplaylist.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtMultimedia\qmediabindableinterface.h \
 		../page.h \
 		../mainwindow.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\QMainWindow \
@@ -1782,7 +2120,6 @@ release\titlepage.obj: ..\titlepage.cpp ../titlepage.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qtabwidget.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qicon.h \
 		ui_titlepage.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\QVariant \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\QAction \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qaction.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qactiongroup.h \
@@ -2092,6 +2429,13 @@ release\luketrainpage.obj: ..\luketrainpage.cpp ../luketrainpage.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qrubberband.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\QLabel \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qlabel.h \
+		../effectmanager.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\QWindow \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qwindow.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\QMargins \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\QRect \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qsurface.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qsurfaceformat.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\QMouseEvent \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\QDebug \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\QTimer \
@@ -2238,6 +2582,15 @@ release\lukeduelpage.obj: ..\lukeduelpage.cpp ../lukeduelpage.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\QMainWindow \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qmainwindow.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qtabwidget.h \
+		../effectmanager.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\QObject \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\QWindow \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qwindow.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\QEvent \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\QMargins \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\QRect \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qsurface.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qsurfaceformat.h \
 		ui_lukeduelpage.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\QAction \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qaction.h \
@@ -2511,18 +2864,27 @@ release\yodaliftpage.obj: ..\yodaliftpage.cpp ../yodaliftpage.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtMultimedia\QMediaPlaylist \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtMultimedia\qmediaplaylist.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtMultimedia\qmediabindableinterface.h \
+		../effectmanager.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\QObject \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\QWindow \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qwindow.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\QEvent \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\QMargins \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\QRect \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qsurface.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qsurfaceformat.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qicon.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\QMainWindow \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qmainwindow.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qtabwidget.h \
 		../qtebutton.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\QPushButton \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qpushbutton.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qabstractbutton.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qicon.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\QElapsedTimer \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qelapsedtimer.h \
 		../page.h \
 		../mainwindow.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\QMainWindow \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qmainwindow.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qtabwidget.h \
 		ui_yodaliftpage.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\QAction \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qaction.h \
@@ -2554,6 +2916,279 @@ release\yodaliftpage.obj: ..\yodaliftpage.cpp ../yodaliftpage.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\QLabel \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qlabel.h
 
+release\effectmanager.obj: ..\effectmanager.cpp ../effectmanager.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\QObject \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qobject.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qobjectdefs.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qnamespace.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qglobal.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qconfig.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qfeatures.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qsystemdetection.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qprocessordetection.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qcompilerdetection.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qtypeinfo.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qtypetraits.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qisenum.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qsysinfo.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qlogging.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qflags.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qatomic.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qbasicatomic.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qatomic_bootstrap.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qgenericatomic.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qatomic_cxx11.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qatomic_msvc.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qglobalstatic.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qmutex.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qnumeric.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qversiontagging.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qobjectdefs_impl.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qstring.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qchar.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qbytearray.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qrefcount.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qarraydata.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qstringbuilder.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qlist.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qalgorithms.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qiterator.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qhashfunctions.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qpair.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qbytearraylist.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qstringlist.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qregexp.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qstringmatcher.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qcoreevent.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qscopedpointer.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qmetatype.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qvarlengtharray.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qcontainerfwd.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qobject_impl.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\QWindow \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qwindow.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\QEvent \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\QMargins \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qmargins.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\QRect \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qrect.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qsize.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qpoint.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qsurface.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qsurfaceformat.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qwindowdefs.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qwindowdefs_win.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qicon.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qpixmap.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qpaintdevice.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qcolor.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qrgb.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qrgba64.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qsharedpointer.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qshareddata.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qhash.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qsharedpointer_impl.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qimage.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qpixelformat.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qtransform.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qmatrix.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qpolygon.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qvector.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qregion.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qdatastream.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qiodevice.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qline.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qpainterpath.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qcursor.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\QMainWindow \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qmainwindow.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qwidget.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qpalette.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qbrush.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qfont.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qfontmetrics.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qfontinfo.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qsizepolicy.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qkeysequence.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qevent.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qvariant.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qmap.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qdebug.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qtextstream.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qlocale.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qset.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qcontiguouscache.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qurl.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qurlquery.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qfile.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qfiledevice.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qvector2d.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qtouchdevice.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qtabwidget.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\QDebug \
+		"C:\Program Files\Immersion Corporation\IFC23\inc\IFC.h" \
+		"C:\Program Files\Immersion Corporation\IFC23\inc\ImmBox.h" \
+		"C:\Program Files\Immersion Corporation\IFC23\inc\ImmBaseTypes.h" \
+		"C:\Program Files\Immersion Corporation\IFC23\inc\FeelitApi.h" \
+		"C:\Program Files\Immersion Corporation\IFC23\inc\ImmEffect.h" \
+		"C:\Program Files\Immersion Corporation\IFC23\inc\ImmDevice.h" \
+		"C:\Program Files\Immersion Corporation\IFC23\inc\ImmEffectSuite.h" \
+		"C:\Program Files\Immersion Corporation\IFC23\inc\ImmEnclosure.h" \
+		"C:\Program Files\Immersion Corporation\IFC23\inc\ImmCondition.h" \
+		"C:\Program Files\Immersion Corporation\IFC23\inc\ImmConstant.h" \
+		"C:\Program Files\Immersion Corporation\IFC23\inc\ImmDamper.h" \
+		"C:\Program Files\Immersion Corporation\IFC23\inc\ImmDevices.h" \
+		"C:\Program Files\Immersion Corporation\IFC23\inc\ImmDXDevice.h" \
+		"C:\Program Files\Immersion Corporation\IFC23\inc\ImmEllipse.h" \
+		"C:\Program Files\Immersion Corporation\IFC23\inc\ImmMouse.h" \
+		"C:\Program Files\Immersion Corporation\IFC23\inc\ImmFriction.h" \
+		"C:\Program Files\Immersion Corporation\IFC23\inc\ImmGrid.h" \
+		"C:\Program Files\Immersion Corporation\IFC23\inc\ImmInertia.h" \
+		"C:\Program Files\Immersion Corporation\IFC23\inc\ImmPeriodic.h" \
+		"C:\Program Files\Immersion Corporation\IFC23\inc\ImmProjects.h" \
+		"C:\Program Files\Immersion Corporation\IFC23\inc\IFCErrors.h" \
+		"C:\Program Files\Immersion Corporation\IFC23\inc\ImmCompoundEffect.h" \
+		"C:\Program Files\Immersion Corporation\IFC23\inc\ImmIFR.h" \
+		"C:\Program Files\Immersion Corporation\IFC23\inc\ImmRamp.h" \
+		"C:\Program Files\Immersion Corporation\IFC23\inc\ImmSpring.h" \
+		"C:\Program Files\Immersion Corporation\IFC23\inc\ImmTexture.h"
+
+release\r2d2mudpage.obj: ..\r2d2mudpage.cpp ../r2d2mudpage.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\QWidget \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qwidget.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qwindowdefs.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qglobal.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qconfig.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qfeatures.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qsystemdetection.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qprocessordetection.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qcompilerdetection.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qtypeinfo.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qtypetraits.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qisenum.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qsysinfo.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qlogging.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qflags.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qatomic.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qbasicatomic.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qatomic_bootstrap.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qgenericatomic.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qatomic_cxx11.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qatomic_msvc.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qglobalstatic.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qmutex.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qnumeric.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qversiontagging.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qobjectdefs.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qnamespace.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qobjectdefs_impl.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qwindowdefs_win.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qobject.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qstring.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qchar.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qbytearray.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qrefcount.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qarraydata.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qstringbuilder.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qlist.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qalgorithms.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qiterator.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qhashfunctions.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qpair.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qbytearraylist.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qstringlist.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qregexp.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qstringmatcher.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qcoreevent.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qscopedpointer.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qmetatype.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qvarlengtharray.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qcontainerfwd.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qobject_impl.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qmargins.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qpaintdevice.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qrect.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qsize.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qpoint.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qpalette.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qcolor.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qrgb.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qrgba64.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qbrush.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qvector.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qmatrix.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qpolygon.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qregion.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qdatastream.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qiodevice.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qline.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qtransform.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qpainterpath.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qimage.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qpixelformat.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qpixmap.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qsharedpointer.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qshareddata.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qhash.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qsharedpointer_impl.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qfont.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qfontmetrics.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qfontinfo.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qsizepolicy.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qcursor.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qkeysequence.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qevent.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qvariant.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qmap.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qdebug.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qtextstream.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qlocale.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qset.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qcontiguouscache.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qurl.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qurlquery.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qfile.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qfiledevice.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qvector2d.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qtouchdevice.h \
+		../page.h \
+		../mainwindow.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\QMainWindow \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qmainwindow.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qtabwidget.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qicon.h \
+		ui_r2d2mudpage.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\QVariant \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\QAction \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qaction.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qactiongroup.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\QApplication \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qapplication.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qcoreapplication.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qeventloop.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qdesktopwidget.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qguiapplication.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qinputmethod.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\QButtonGroup \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qbuttongroup.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\QHeaderView \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qheaderview.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qabstractitemview.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qabstractscrollarea.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qframe.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qabstractitemmodel.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qitemselectionmodel.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qabstractitemdelegate.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qstyleoption.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qabstractspinbox.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qvalidator.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qregularexpression.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qslider.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qabstractslider.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qstyle.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qtabbar.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qrubberband.h
+
 release\moc_mainwindow.obj: release\moc_mainwindow.cpp 
 
 release\moc_page.obj: release\moc_page.cpp 
@@ -2569,6 +3204,10 @@ release\moc_lukeduelpage.obj: release\moc_lukeduelpage.cpp
 release\moc_qtebutton.obj: release\moc_qtebutton.cpp 
 
 release\moc_yodaliftpage.obj: release\moc_yodaliftpage.cpp 
+
+release\moc_effectmanager.obj: release\moc_effectmanager.cpp 
+
+release\moc_r2d2mudpage.obj: release\moc_r2d2mudpage.cpp 
 
 ####### Install
 
