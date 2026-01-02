@@ -1,4 +1,5 @@
 #include "effectmanager.h"
+#include <QDebug>
 
 // IFC
 #ifdef UNICODE
@@ -27,10 +28,20 @@ EffectManager::EffectManager(QObject *parent) : QObject(parent)
 
 bool EffectManager::initializeMouse(const QWindow &window)
 {
+    return initializeMouseInternal((void*)window.winId());
+}
+
+bool EffectManager::initializeMouse(QMainWindow const* window)
+{
+    return initializeMouseInternal((void*)window->winId());
+}
+
+bool EffectManager::initializeMouseInternal(void *ptr)
+{
     if (m_device)
         return true;
 
-    HWND handle = reinterpret_cast<HWND>(window.winId());
+    HWND handle = reinterpret_cast<HWND>(ptr);
 
     CImmMouse* dev = new CImmMouse;
     if (dev->Initialize(GetModuleHandle(NULL), handle)) {
@@ -69,13 +80,29 @@ bool EffectManager::pushProject(const char *projectName, bool loop)
 {
     CImmProject* project = new CImmProject;
     if (project->OpenFile(projectName, m_device)) {
-        if (project->Start(0, loop, 0, m_device)) {
+        int neffects = project->GetNumEffects();
+        if (!neffects)
+            return false;
+        if (project->Start(project->GetEffectName(0), loop, 0, m_device)) {
             m_effects.push_back(project);
             return true;
         }
     }
     return false;
 }
+
+bool EffectManager::pushProject(const char *projectName, const char* effectName, bool loop)
+{
+    CImmProject* project = new CImmProject;
+    if (project->OpenFile(projectName, m_device)) {
+        if (project->Start(effectName, loop, 0, m_device)) {
+            m_effects.push_back(project);
+            return true;
+        }
+    }
+    return false;
+}
+
 
 void EffectManager::tick()
 {

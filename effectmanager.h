@@ -7,6 +7,7 @@ class CImmDevice;
 
 #include <QObject>
 #include <QWindow>
+#include <QMainWindow>
 #include <vector>
 
 class EffectManager : public QObject
@@ -17,6 +18,7 @@ public:
 
     // Initialisation du manager
     bool initializeMouse(QWindow const& window);
+    bool initializeMouse(QMainWindow const* window);
 
     // Ajout d'un nouvel effet qui s'additionnera au précédent.
     // Le dernier effet est supprimé dès qu'il se termine.
@@ -25,6 +27,9 @@ public:
 
     // Raccourci pour initialisation par projet
     bool pushProject(char const* projectName, bool loop);
+
+    // Raccourci pour initialisation par projet et effet contenu
+    bool pushProject(char const* projectName, char const* effectName, bool loop);
 
 signals:
 
@@ -42,6 +47,8 @@ protected:
     void validateEffectStack();
 
     static bool isProjectPlaying(CImmProject* p);
+
+    bool initializeMouseInternal(void* ptr);
 
 private:
     std::vector<CImmProject*> m_effects;

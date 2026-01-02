@@ -8,6 +8,8 @@
 #include "qtebutton.h"
 #include "page.h"
 #include "mainwindow.h"
+#include "effectmanager.h"
+
 namespace Ui {
 class LukeDuelPage;
 }
@@ -25,6 +27,7 @@ public slots:
     void showSuccess();
     void showFail();
     void showSaberStrike();
+    void frameHook(int nframe);
 
     bool placeTimedButton();
 
@@ -41,6 +44,7 @@ private:
     QMediaPlayer sfxPlayer;
     QMediaPlaylist audioList;
     QTEButton* currentButton;
+    EffectManager effects;
 
     int lastStrikeDirection;
     int numSuccessfulStrikes;

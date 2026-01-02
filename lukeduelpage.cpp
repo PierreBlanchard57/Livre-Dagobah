@@ -3,6 +3,10 @@
 #include <QTimer>
 #include <stdlib.h>
 
+#define PAGE_EFFECT_SHOCKWAVE "./shockwave.ifr"
+#define PAGE_EFFECT_SABER "./saber_reference_buzz.ifr"
+#define PAGE_EFFECT_BLOW "./saber_blow.ifr"
+
 LukeDuelPage::LukeDuelPage(QWidget *parent,MainWindow *mainwindow) :
     Page(parent,mainwindow),
     ui(new Ui::LukeDuelPage)
@@ -15,10 +19,14 @@ LukeDuelPage::LukeDuelPage(QWidget *parent,MainWindow *mainwindow) :
     audioList.setPlaybackMode(QMediaPlaylist::Loop);
 
     // la page ne se déclenche pas encore si elle n'est pas visible
+    connect(&movie, &QMovie::frameChanged, this, &LukeDuelPage::frameHook);
 }
 
 void LukeDuelPage::showEvent(QShowEvent* show)
 {
+    if(!effects.initializeMouse(mainWindow))
+        qDebug() << "No haptic mouse plugged in!";
+
     if (initialized)
         return;
 
@@ -44,6 +52,40 @@ void LukeDuelPage::hideEvent(QHideEvent *event)
     // seulement important d'arrêter le son
     audioPlayer.stop();
     sfxPlayer.stop();
+
+    // ainsi que les effets
+    effects.clearAllEffects();
+}
+
+void LukeDuelPage::frameHook(int nframe)
+{
+    // pas de rafraîchissement d'effets haptiques quand invisible.
+    if (!isVisible())
+        return;
+
+    qDebug() << "Frame " << nframe;
+    if (movie.fileName().contains("blow")) {
+        if (nframe == 0) { // Lancement du sabre
+            char const* blow[] = {"blow_left", "blow_up", "blow_right"};
+            effects.pushProject(PAGE_EFFECT_BLOW, blow[lastStrikeDirection], false);
+        }
+        if (nframe == 4) { // Claquement de sabres
+            effects.pushProject(PAGE_EFFECT_SHOCKWAVE, false);
+        }
+    }
+    else if (movie.fileName() == "./pages_m/duel_enter.gif") {
+        if (nframe == 54) // Vador apparaît dans la brume
+            effects.pushProject(PAGE_EFFECT_SHOCKWAVE, false);
+
+        if (nframe == 90) // Le sabre de Luke s'illumine
+            effects.pushProject(PAGE_EFFECT_SABER, false);
+    }
+    else if (movie.fileName() == "./pages_m/duel_finish.gif") {
+        if (nframe == 50) { // Le heaume explose
+            effects.clearAllEffects();
+            effects.pushProject(PAGE_EFFECT_SHOCKWAVE, false);
+        }
+    }
 }
 
 void LukeDuelPage::showSaberStrike()
@@ -160,8 +202,13 @@ void LukeDuelPage::showFail()
             delay->deleteLater();
             // redémarrage du jeu
             showGameState();
+            // il faut redémarrer le sabre aussi
+            effects.pushProject(PAGE_EFFECT_SABER, false);
         });
     });
+
+    // plus d'effets
+    effects.clearAllEffects();
 }
 
 void LukeDuelPage::keyPressEvent(QKeyEvent* event)
