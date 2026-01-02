@@ -13,22 +13,26 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <property name="autoFillBackground">
+   <bool>false</bool>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(130, 130, 130);</string>
+  </property>
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>190</x>
-     <y>140</y>
-     <width>331</width>
-     <height>171</height>
+     <x>0</x>
+     <y>0</y>
+     <width>700</width>
+     <height>450</height>
     </rect>
    </property>
-   <property name="font">
-    <font>
-     <pointsize>36</pointsize>
-    </font>
-   </property>
    <property name="text">
-    <string>Je suis un titre</string>
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap>couverture.jpg</pixmap>
    </property>
   </widget>
  </widget>
