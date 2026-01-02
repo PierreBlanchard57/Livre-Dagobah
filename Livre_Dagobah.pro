@@ -20,7 +20,8 @@ SOURCES += main.cpp\
     luketrainpage.cpp \
     lukeduelpage.cpp \
     qtebutton.cpp \
-    yodaliftpage.cpp
+    yodaliftpage.cpp \
+    effectmanager.cpp
 
 HEADERS  += mainwindow.h \
     page.h \
@@ -29,7 +30,8 @@ HEADERS  += mainwindow.h \
     luketrainpage.h \
     lukeduelpage.h \
     qtebutton.h \
-    yodaliftpage.h
+    yodaliftpage.h \
+    effectmanager.h
 
 FORMS    += mainwindow.ui \
     titlepage.ui \
@@ -43,3 +45,9 @@ RESOURCES +=
 DISTFILES +=
 
 win32: LIBS += -lshell32
+
+win32:CONFIG(release, debug|release): LIBS += -L'C:/Program Files/Immersion Corporation/IFC23/lib/' -lIFC23
+else:win32:CONFIG(debug, debug|release): LIBS += -L'C:/Program Files/Immersion Corporation/IFC23/lib/' -lIFC23d
+
+INCLUDEPATH += 'C:/Program Files/Immersion Corporation/IFC23/inc'
+DEPENDPATH += 'C:/Program Files/Immersion Corporation/IFC23/inc'
