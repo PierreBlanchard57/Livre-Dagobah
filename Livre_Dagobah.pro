@@ -38,7 +38,6 @@ FORMS    += mainwindow.ui \
     lukeduelpage.ui \
     yodaliftpage.ui
 
-RESOURCES += \
-    images.qrc
+RESOURCES +=
 
 DISTFILES +=

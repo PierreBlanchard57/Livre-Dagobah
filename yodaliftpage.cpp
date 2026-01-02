@@ -2,14 +2,14 @@
 #include "ui_yodaliftpage.h"
 #include <stdlib.h>
 
-#define YODA_LIFT_PAGE_RES ":/pages_m/xwing_lift.gif"
+#define YODA_LIFT_PAGE_RES "./pages_m/xwing_lift.gif"
 
 YodaLiftPage::YodaLiftPage(QWidget *parent) :
     Page(parent),
     ui(new Ui::YodaLiftPage)
 {
     ui->setupUi(this);
-    audioList.addMedia(QUrl("qrc:/pages_m/xwing_idle.wav"));
+    audioList.addMedia(QUrl("./pages_m/xwing_idle.wav"));
     audioList.setPlaybackMode(QMediaPlaylist::Loop);
 
     updateTimer.setInterval(100); // lent
@@ -42,7 +42,7 @@ void YodaLiftPage::hideEvent(QHideEvent *event)
 
 void YodaLiftPage::showIntro(bool startMusic)
 {
-    movie.setFileName(":/pages_m/xwing_yoda.gif");
+    movie.setFileName("./pages_m/xwing_yoda.gif");
 
     movie.start();
     if (startMusic)
@@ -64,7 +64,7 @@ void YodaLiftPage::showFail()
         currentButton = nullptr;
     }
 
-    movie.setFileName(":/pages_m/xwing_lapse.gif");
+    movie.setFileName("./pages_m/xwing_lapse.gif");
     movie.start();
 
     // sortie de la musique triomphante
@@ -89,13 +89,13 @@ void YodaLiftPage::showSuccess()
         currentButton = nullptr;
     }
 
-    movie.setFileName(":/pages_m/xwing_recover.gif");
+    movie.setFileName("./pages_m/xwing_recover.gif");
     movie.start();
 }
 
 void YodaLiftPage::involveGame()
 {
-    audioPlayer.setMedia(QUrl("qrc:/pages_m/xwing_lift.wav"));
+    audioPlayer.setMedia(QUrl("./pages_m/xwing_lift.wav"));
     audioPlayer.play();
 }
 

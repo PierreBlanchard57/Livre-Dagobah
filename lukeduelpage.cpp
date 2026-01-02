@@ -11,7 +11,7 @@ LukeDuelPage::LukeDuelPage(QWidget *parent) :
     initialized = false;
 
     ui->setupUi(this);
-    audioList.addMedia(QUrl("qrc:/pages_m/duel_ongoing.wav"));
+    audioList.addMedia(QUrl("./pages_m/duel_ongoing.wav"));
     audioList.setPlaybackMode(QMediaPlaylist::Loop);
 
     // la page ne se déclenche pas encore si elle n'est pas visible
@@ -22,10 +22,10 @@ void LukeDuelPage::showEvent(QShowEvent* show)
     if (initialized)
         return;
 
-    movie.setFileName(":/pages_m/duel_enter.gif");
+    movie.setFileName("./pages_m/duel_enter.gif");
     ui->movieLabel->setMovie(&movie);
 
-    audioPlayer.setMedia(QUrl("qrc:/pages_m/duel_enter.wav"));
+    audioPlayer.setMedia(QUrl("./pages_m/duel_enter.wav"));
 
     movie.start();
     audioPlayer.play();
@@ -54,14 +54,14 @@ void LukeDuelPage::showSaberStrike()
     }
 
     const char* anims[] = {
-        ":/pages_m/duel_blow_left.gif",
-        ":/pages_m/duel_blow_up.gif",
-        ":/pages_m/duel_blow_right.gif"
+        "./pages_m/duel_blow_left.gif",
+        "./pages_m/duel_blow_up.gif",
+        "./pages_m/duel_blow_right.gif"
     };
     movie.setFileName(anims[lastStrikeDirection]);
     movie.start();
 
-    sfxPlayer.setMedia(QUrl("qrc:/pages_m/duel_strike.wav"));
+    sfxPlayer.setMedia(QUrl("./pages_m/duel_strike.wav"));
     sfxPlayer.play();
 
     QObject* oneShot = new QObject();
@@ -125,26 +125,26 @@ void LukeDuelPage::showGameState(bool init)
     }
 
     if (placeTimedButton()) {
-        movie.setFileName(":/pages_m/duel_states.gif");
+        movie.setFileName("./pages_m/duel_states.gif");
         movie.start();
     }
 }
 
 void LukeDuelPage::showSuccess()
 {
-    movie.setFileName(":/pages_m/duel_finish.gif");
+    movie.setFileName("./pages_m/duel_finish.gif");
     movie.start();
 
-    audioPlayer.setMedia(QUrl("qrc:/pages_m/duel_success.wav"));
+    audioPlayer.setMedia(QUrl("./pages_m/duel_success.wav"));
     audioPlayer.play();
 }
 
 void LukeDuelPage::showFail()
 {
-    movie.setFileName(":/pages_m/duel_fail.gif");
+    movie.setFileName("./pages_m/duel_fail.gif");
     movie.start();
 
-    audioPlayer.setMedia(QUrl("qrc:/pages_m/duel_echec.wav"));
+    audioPlayer.setMedia(QUrl("./pages_m/duel_echec.wav"));
     audioPlayer.play();
 
     QObject* oneShot = new QObject();

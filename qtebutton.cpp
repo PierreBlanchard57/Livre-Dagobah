@@ -9,7 +9,7 @@ QTEButton::QTEButton(qint64 msTimeout, QWidget *parent)
     timeout = msTimeout;
     timer.start();
 
-    image = QImage(QString(":/pages_m/hint_mouse.png"));
+    image = QImage(QString("./pages_m/hint_mouse.png"));
 }
 
 void QTEButton::paintEvent(QPaintEvent *)

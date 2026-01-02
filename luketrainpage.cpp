@@ -23,7 +23,7 @@ if(watched== ui->rock1 || watched==ui->rock2 || watched==ui->rock3){
                 if (mouseEvent->button() == Qt::LeftButton) {
                         qDebug() << "enfoncé";
                         isDragging=true;
-                        changeLukePose(":/luke_force.png");
+                        changeLukePose("./luke_force.png");
                         offset=mainWindow->pos()+QPoint(40,60);
 
                 }
@@ -31,7 +31,7 @@ if(watched== ui->rock1 || watched==ui->rock2 || watched==ui->rock3){
     if (event->type() == QEvent::MouseButtonRelease) {
                 QMouseEvent *mouseEvent = static_cast<QMouseEvent *>(event);
                 if (mouseEvent->button() == Qt::LeftButton) {
-                    changeLukePose(":/luke_normal.png");
+                    changeLukePose("./luke_normal.png");
                     isDragging=false;
                     if(rocksPlaced[0] && rocksPlaced[1] && rocksPlaced[2]){
                     setPageFinished();

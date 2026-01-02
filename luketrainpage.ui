@@ -26,7 +26,7 @@
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap resource="images.qrc">:/training.png</pixmap>
+    <pixmap>training.png</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>
@@ -45,7 +45,7 @@
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap resource="images.qrc">:/luke_normal.png</pixmap>
+    <pixmap>./luke_normal.png</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>
@@ -64,7 +64,7 @@
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap resource="images.qrc">:/rock_base.png</pixmap>
+    <pixmap>./rock_base.png</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>
@@ -115,7 +115,7 @@
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap resource="images.qrc">:/rock_object.png</pixmap>
+    <pixmap>./rock_object.png</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>
@@ -134,7 +134,7 @@
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap resource="images.qrc">:/rock_object.png</pixmap>
+    <pixmap>./rock_object.png</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>
@@ -153,15 +153,13 @@
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap resource="images.qrc">:/rock_object.png</pixmap>
+    <pixmap>./rock_object.png</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>
    </property>
   </widget>
  </widget>
- <resources>
-  <include location="images.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>
