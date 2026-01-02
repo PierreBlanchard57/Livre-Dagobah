@@ -8,10 +8,19 @@ LukeDuelPage::LukeDuelPage(QWidget *parent) :
     ui(new Ui::LukeDuelPage)
 {
     currentButton = nullptr;
+    initialized = false;
 
     ui->setupUi(this);
     audioList.addMedia(QUrl("qrc:/pages_m/duel_ongoing.wav"));
     audioList.setPlaybackMode(QMediaPlaylist::Loop);
+
+    // la page ne se déclenche pas encore si elle n'est pas visible
+}
+
+void LukeDuelPage::showEvent(QShowEvent* show)
+{
+    if (initialized)
+        return;
 
     movie.setFileName(":/pages_m/duel_enter.gif");
     ui->movieLabel->setMovie(&movie);
@@ -27,6 +36,14 @@ LukeDuelPage::LukeDuelPage(QWidget *parent) :
         // Démarrage du jeu
         showGameState();
     });
+    initialized = true;
+}
+
+void LukeDuelPage::hideEvent(QHideEvent *event)
+{
+    // seulement important d'arrêter le son
+    audioPlayer.stop();
+    sfxPlayer.stop();
 }
 
 void LukeDuelPage::showSaberStrike()

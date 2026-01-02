@@ -30,6 +30,8 @@ public slots:
 
 protected:
     void keyPressEvent(QKeyEvent* event) override;
+    void showEvent(QShowEvent* event) override;
+    void hideEvent(QHideEvent *event) override;
 
 private:
     Ui::LukeDuelPage *ui;
@@ -42,6 +44,7 @@ private:
 
     int lastStrikeDirection;
     int numSuccessfulStrikes;
+    bool initialized;
 };
 
 #endif // LUKEDUELPAGE_H
