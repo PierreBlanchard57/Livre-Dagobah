@@ -15,6 +15,7 @@ private:
     Ui::R2D2MudPage *ui;
     EffectManager effects;
     bool eventFilter(QObject *watched, QEvent *event);
+    void tryFinishPage();
 };
 
 #endif // R2D2MUDPAGE_H

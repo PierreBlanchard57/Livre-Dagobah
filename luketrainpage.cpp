@@ -22,42 +22,42 @@ bool LukeTrainPage::eventFilter(QObject *watched, QEvent *event){
     QMouseEvent *mouseEvent = static_cast<QMouseEvent *>(event);
 
     if (event->type() == QEvent::MouseButtonPress) {
-                if (mouseEvent->button() == Qt::LeftButton) {
-                        isDragging=true;
-                        changeLukePose("./pages_p/luke_force.png");
-                        offset=mainWindow->pos()+QPoint(40,60);
-                        effects.pushProject("gravity.ifr","Compound",true);
+        if (mouseEvent->button() == Qt::LeftButton) {
+            isDragging=true;
+            changeLukePose("./pages_p/luke_force.png");
+            offset=mainWindow->pos()+QPoint(40,60);
+            effects.pushProject("gravity.ifr","Compound",true);
 
-                }
-            }
-    if (event->type() == QEvent::MouseButtonRelease) {
-                if (mouseEvent->button() == Qt::LeftButton) {
-                    changeLukePose("./pages_p/luke_normal.png");
-                    isDragging=false;
-                    effects.clearAllEffects();
-                    if(rocksPlaced[0] && rocksPlaced[1] && rocksPlaced[2]){
-                        setPageFinished();
-                    }
-                }
-            }
-
-if (event->type() == QEvent::MouseMove && isDragging) {
-
-     QPoint pos=mouseEvent->globalPos()-offset;
-     //limitation de la position
-     int posX=std::min(std::max(200,pos.x()),460);
-     int posY=std::min(std::max(0,pos.y()),200);
-     pos=QPoint(posX,posY);
-     if(posY==200)effects.pushProject("ground.ifr","Compound",false);
-    //translation du label cible
-     ((QLabel*)watched)->move(pos.x(),pos.y());
-     if(pos.x()>toleratedPos){
-        if(watched==ui->rock1 && !rocksPlaced[0]){rocksPlaced[0]=true;rocksFinalY[0]=cumulativeRocksY;cumulativeRocksY-=20;}
-        if(watched==ui->rock2 && !rocksPlaced[1]){rocksPlaced[1]=true;rocksFinalY[1]=cumulativeRocksY;cumulativeRocksY-=20;}
-        if(watched==ui->rock3 && !rocksPlaced[2]){rocksPlaced[2]=true;rocksFinalY[2]=cumulativeRocksY;cumulativeRocksY-=20;}
-     }
+        }
     }
-return false;
+    if (event->type() == QEvent::MouseButtonRelease) {
+        if (mouseEvent->button() == Qt::LeftButton) {
+            changeLukePose("./pages_p/luke_normal.png");
+            isDragging=false;
+            effects.clearAllEffects();
+            if(rocksPlaced[0] && rocksPlaced[1] && rocksPlaced[2]){
+                setPageFinished();
+            }
+        }
+    }
+
+    if (event->type() == QEvent::MouseMove && isDragging) {
+
+        QPoint pos=mouseEvent->globalPos()-offset;
+        //limitation de la position
+        int posX=std::min(std::max(200,pos.x()),460);
+        int posY=std::min(std::max(0,pos.y()),200);
+        pos=QPoint(posX,posY);
+        if(posY==200)effects.pushProject("ground.ifr","Compound",false);
+        //translation du label cible
+        ((QLabel*)watched)->move(pos.x(),pos.y());
+        if(pos.x()>toleratedPos){
+            if(watched==ui->rock1 && !rocksPlaced[0]){rocksPlaced[0]=true;rocksFinalY[0]=cumulativeRocksY;cumulativeRocksY-=20;}
+            if(watched==ui->rock2 && !rocksPlaced[1]){rocksPlaced[1]=true;rocksFinalY[1]=cumulativeRocksY;cumulativeRocksY-=20;}
+            if(watched==ui->rock3 && !rocksPlaced[2]){rocksPlaced[2]=true;rocksFinalY[2]=cumulativeRocksY;cumulativeRocksY-=20;}
+        }
+    }
+    return false;
 }
 
 void LukeTrainPage::changeLukePose(const std::string &file)
@@ -67,14 +67,14 @@ void LukeTrainPage::changeLukePose(const std::string &file)
 }
 void LukeTrainPage::updateRockPos(){
     if(!isDragging){
-    QPoint pos1=ui->rock1->pos()+QPoint(0,gravity);
-    ui->rock1->move(pos1.x(),std::min(determineGround(pos1.x(),0),pos1.y()));
+        QPoint pos1=ui->rock1->pos()+QPoint(0,gravity);
+        ui->rock1->move(pos1.x(),std::min(determineGround(pos1.x(),0),pos1.y()));
 
-    QPoint pos2=ui->rock2->pos()+QPoint(0,gravity);
-    ui->rock2->move(pos2.x(),std::min(determineGround(pos2.x(),1),pos2.y()));
+        QPoint pos2=ui->rock2->pos()+QPoint(0,gravity);
+        ui->rock2->move(pos2.x(),std::min(determineGround(pos2.x(),1),pos2.y()));
 
-    QPoint pos3=ui->rock3->pos()+QPoint(0,gravity);
-    ui->rock3->move(pos3.x(),std::min(determineGround(pos3.x(),2),pos3.y()));
+        QPoint pos3=ui->rock3->pos()+QPoint(0,gravity);
+        ui->rock3->move(pos3.x(),std::min(determineGround(pos3.x(),2),pos3.y()));
     }
 }
 int LukeTrainPage::determineGround(int posX,int id){
