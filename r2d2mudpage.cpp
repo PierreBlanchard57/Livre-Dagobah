@@ -23,6 +23,16 @@ R2D2MudPage::R2D2MudPage(QWidget *parent,MainWindow *mainwindow) : Page(parent,m
     double percent=(double)((maxLeftGap-leftGap)/gapGrowthBySide)/200;
     ui->r2d2->installEventFilter(this);
 }
+void R2D2MudPage::showEvent(QShowEvent *event)
+{
+    musicPlayer.setMedia(QUrl("./pages_p/mud_music.wav"));
+    musicPlayer.play();
+}
+
+void R2D2MudPage::hideEvent(QHideEvent *event)
+{
+    musicPlayer.stop();
+}
 
 bool R2D2MudPage::eventFilter(QObject *watched, QEvent *event){
     QMouseEvent *mouseEvent = static_cast<QMouseEvent *>(event);
@@ -49,6 +59,8 @@ bool R2D2MudPage::eventFilter(QObject *watched, QEvent *event){
                     rightGap=std::min(maxRightGap,rightGap+gapGrowthBySide);
                     stretchDirection=RIGHT;
                     ui->r2d2->move(ui->r2d2->pos()+QPoint(0, -elevationBySide));
+                    soundPlayer.setMedia(QUrl("./pages_p/mud_move.wav"));
+                    soundPlayer.play();
                     tryFinishPage();
                 }
             }
@@ -57,6 +69,8 @@ bool R2D2MudPage::eventFilter(QObject *watched, QEvent *event){
                     leftGap=std::min(maxLeftGap,leftGap+gapGrowthBySide);
                     stretchDirection=LEFT;
                     ui->r2d2->move(ui->r2d2->pos()+QPoint(0,-elevationBySide));
+                    soundPlayer.setMedia(QUrl("./pages_p/mud_move.wav"));
+                    soundPlayer.play();
                     tryFinishPage();
                 }
             }

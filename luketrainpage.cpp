@@ -12,8 +12,6 @@ LukeTrainPage::LukeTrainPage(QWidget *parent,MainWindow *mainwindow) : Page(pare
     ui->rock3->installEventFilter(this);
     QTimer *timer = new QTimer(this);
     connect(timer, &QTimer::timeout, this, &LukeTrainPage::updateRockPos);
-    musicPlayer.setMedia(QUrl("./pages_p/train_music.wav"));
-    musicPlayer.play();
 
     timer->start(16);
     if(!effects.initializeMouse(mainWindow))
@@ -22,6 +20,7 @@ LukeTrainPage::LukeTrainPage(QWidget *parent,MainWindow *mainwindow) : Page(pare
 }
 void LukeTrainPage::showEvent(QShowEvent *event)
 {
+    musicPlayer.setMedia(QUrl("./pages_p/train_music.wav"));
     musicPlayer.play();
 }
 
