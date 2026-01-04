@@ -31,6 +31,7 @@ private:
     QMediaPlayer soundPlayer;
     bool eventFilter(QObject *watched, QEvent *event);
     void changeLukePose(const std::string &file);
+    void changeRockSprite(QLabel *rock,const std::string &file);
     int determineGround(int posX,int id);
     void updateRockPos();
     void unlock();

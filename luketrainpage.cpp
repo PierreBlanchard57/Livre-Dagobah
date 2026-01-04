@@ -40,6 +40,7 @@ bool LukeTrainPage::eventFilter(QObject *watched, QEvent *event){
             soundPlayer.setMedia(QUrl("./pages_p/rock_levitate.wav"));
             soundPlayer.play();
             setCursor(Qt::BlankCursor);
+            changeRockSprite((QLabel*)watched,"./pages_p/rock_object_drag.png");
 
         }
     }
@@ -53,6 +54,7 @@ bool LukeTrainPage::eventFilter(QObject *watched, QEvent *event){
                 setPageFinished();
             }
             setCursor(Qt::ArrowCursor);
+            changeRockSprite((QLabel*)watched,"./pages_p/rock_object.png");
         }
     }
 
@@ -79,6 +81,11 @@ void LukeTrainPage::changeLukePose(const std::string &file)
 {
 
     ui->luke->setPixmap(QPixmap(QString::fromStdString(file)));
+}
+void LukeTrainPage::changeRockSprite(QLabel *rock,const std::string &file)
+{
+
+    rock->setPixmap(QPixmap(QString::fromStdString(file)));
 }
 void LukeTrainPage::updateRockPos(){
     if(!isDragging){
