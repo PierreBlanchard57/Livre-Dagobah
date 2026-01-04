@@ -48,6 +48,7 @@ bool LukeTrainPage::eventFilter(QObject *watched, QEvent *event){
             changeLukePose("./pages_p/luke_normal.png");
             isDragging=false;
             effects.clearAllEffects();
+            soundPlayer.stop();
             if(rocksPlaced[0] && rocksPlaced[1] && rocksPlaced[2]){
                 setPageFinished();
             }
