@@ -5,8 +5,8 @@
 
 #define LEFT 0
 #define RIGHT 1
-int midX;
-const int maxLeftGap=105;
+int midX;//la position en X du milieu de R2D2,servant de repère gauche/droite
+const int maxLeftGap=105;//
 const int maxRightGap=105;
 const int gapGrowthBySide=5;
 int leftGap=5;

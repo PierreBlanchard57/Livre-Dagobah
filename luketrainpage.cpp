@@ -12,12 +12,23 @@ LukeTrainPage::LukeTrainPage(QWidget *parent,MainWindow *mainwindow) : Page(pare
     ui->rock3->installEventFilter(this);
     QTimer *timer = new QTimer(this);
     connect(timer, &QTimer::timeout, this, &LukeTrainPage::updateRockPos);
+    musicPlayer.setMedia(QUrl("./pages_p/train_music.wav"));
+    musicPlayer.play();
+
     timer->start(16);
     if(!effects.initializeMouse(mainWindow))
         qDebug() << "No haptic mouse plugged in!";
 
 }
+void LukeTrainPage::showEvent(QShowEvent *event)
+{
+    musicPlayer.play();
+}
 
+void LukeTrainPage::hideEvent(QHideEvent *event)
+{
+    musicPlayer.stop();
+}
 bool LukeTrainPage::eventFilter(QObject *watched, QEvent *event){
     QMouseEvent *mouseEvent = static_cast<QMouseEvent *>(event);
 
@@ -27,6 +38,8 @@ bool LukeTrainPage::eventFilter(QObject *watched, QEvent *event){
             changeLukePose("./pages_p/luke_force.png");
             offset=mainWindow->pos()+QPoint(40,60);
             effects.pushProject("gravity.ifr","Compound",true);
+            soundPlayer.setMedia(QUrl("./pages_p/rock_levitate.wav"));
+            soundPlayer.play();
 
         }
     }
