@@ -19,10 +19,9 @@ LukeTrainPage::LukeTrainPage(QWidget *parent,MainWindow *mainwindow) : Page(pare
 }
 
 bool LukeTrainPage::eventFilter(QObject *watched, QEvent *event){
+    QMouseEvent *mouseEvent = static_cast<QMouseEvent *>(event);
 
-if(watched== ui->rock1 || watched==ui->rock2 || watched==ui->rock3){
     if (event->type() == QEvent::MouseButtonPress) {
-                QMouseEvent *mouseEvent = static_cast<QMouseEvent *>(event);
                 if (mouseEvent->button() == Qt::LeftButton) {
                         isDragging=true;
                         changeLukePose("./pages_p/luke_force.png");
@@ -32,7 +31,6 @@ if(watched== ui->rock1 || watched==ui->rock2 || watched==ui->rock3){
                 }
             }
     if (event->type() == QEvent::MouseButtonRelease) {
-                QMouseEvent *mouseEvent = static_cast<QMouseEvent *>(event);
                 if (mouseEvent->button() == Qt::LeftButton) {
                     changeLukePose("./pages_p/luke_normal.png");
                     isDragging=false;
@@ -43,10 +41,8 @@ if(watched== ui->rock1 || watched==ui->rock2 || watched==ui->rock3){
                 }
             }
 
-}
 if (event->type() == QEvent::MouseMove && isDragging) {
 
-     QMouseEvent *mouseEvent = static_cast<QMouseEvent *>(event);
      QPoint pos=mouseEvent->globalPos()-offset;
      //limitation de la position
      int posX=std::min(std::max(200,pos.x()),460);

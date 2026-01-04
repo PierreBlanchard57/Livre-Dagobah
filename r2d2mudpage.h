@@ -4,6 +4,7 @@
 #include <QWidget>
 #include "page.h"
 #include "ui_r2d2mudpage.h"
+#include "effectmanager.h"
 class R2D2MudPage : public Page
 {
     Q_OBJECT
@@ -12,6 +13,8 @@ public:
 
 private:
     Ui::R2D2MudPage *ui;
+    EffectManager effects;
+    bool eventFilter(QObject *watched, QEvent *event);
 };
 
 #endif // R2D2MUDPAGE_H
