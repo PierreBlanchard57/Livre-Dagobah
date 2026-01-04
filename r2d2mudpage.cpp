@@ -41,12 +41,14 @@ bool R2D2MudPage::eventFilter(QObject *watched, QEvent *event){
             isDragging=true;
             lastMousePos=ui->r2d2->parentWidget()->mapFromGlobal(mouseEvent->globalPos());
             effects.pushProject("mud.ifr","Compound",false);
+            setCursor(Qt::BlankCursor);
         }
     }
     if(event->type()==QEvent::MouseButtonRelease){
         if (mouseEvent->button() == Qt::LeftButton) {
             isDragging=false;
             effects.clearAllEffects();
+            setCursor(Qt::ArrowCursor);
         }
     }
     if(event->type()==QEvent::MouseMove && isDragging){

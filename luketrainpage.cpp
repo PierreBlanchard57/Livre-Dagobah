@@ -39,6 +39,7 @@ bool LukeTrainPage::eventFilter(QObject *watched, QEvent *event){
             effects.pushProject("gravity.ifr","Compound",true);
             soundPlayer.setMedia(QUrl("./pages_p/rock_levitate.wav"));
             soundPlayer.play();
+            setCursor(Qt::BlankCursor);
 
         }
     }
@@ -51,6 +52,7 @@ bool LukeTrainPage::eventFilter(QObject *watched, QEvent *event){
             if(rocksPlaced[0] && rocksPlaced[1] && rocksPlaced[2]){
                 setPageFinished();
             }
+            setCursor(Qt::ArrowCursor);
         }
     }
 
