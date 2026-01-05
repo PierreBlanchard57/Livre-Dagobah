@@ -16,17 +16,14 @@ public:
     void enableSound() override;
     void disableSound()override;
     ~LukeTrainPage();
+    static const int toleratedPos=420;
 protected:
     void showEvent(QShowEvent *event) override;
     void hideEvent(QHideEvent *event) override;
 private:
     Ui::LukeTrainPage *ui;
-    bool rocksPlaced[3]={};
-    int rocksFinalY[3]={};
-    int cumulativeRocksY=170;
+    int cumulativeRocksY=190;
     bool isDragging=false;
-    const double gravity=5;
-    const int toleratedPos=420;
     QPoint offset;
     EffectManager effects;
 

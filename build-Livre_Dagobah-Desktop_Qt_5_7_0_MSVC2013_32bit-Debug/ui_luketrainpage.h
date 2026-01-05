@@ -16,6 +16,8 @@
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QWidget>
+#include "rockobject.h"
+#include <QObject>
 
 QT_BEGIN_NAMESPACE
 
@@ -26,9 +28,9 @@ public:
     QLabel *luke;
     QLabel *rockBase;
     QLabel *text1;
-    QLabel *rock1;
-    QLabel *rock2;
-    QLabel *rock3;
+    RockObject *rock1;
+    RockObject *rock2;
+    RockObject *rock3;
     QLabel *text2;
 
     void setupUi(QWidget *LukeTrainPage)
@@ -64,21 +66,24 @@ public:
         text1->setStyleSheet(QStringLiteral("background-color: rgb(254, 255, 194);"));
         text1->setTextFormat(Qt::RichText);
         text1->setWordWrap(true);
-        rock1 = new QLabel(LukeTrainPage);
-        rock1->setObjectName(QStringLiteral("rock1"));
+        std::vector<QObject*> c1={rock2,rock3,rockBase};
+        rock1 = new RockObject(LukeTrainPage,QStringLiteral("rock1"),QRect(210, 200, 40, 20),c1);
+        /*rock1->setObjectName(QStringLiteral("rock1"));
         rock1->setGeometry(QRect(210, 200, 40, 20));
         rock1->setPixmap(QPixmap(QString::fromUtf8("pages_p/rock_object.png")));
-        rock1->setScaledContents(true);
-        rock2 = new QLabel(LukeTrainPage);
-        rock2->setObjectName(QStringLiteral("rock2"));
+        rock1->setScaledContents(true);*/
+        std::vector<QObject*> c2={rock1,rock3,rockBase};
+        rock2 = new RockObject(LukeTrainPage,QStringLiteral("rock2"),QRect(260, 200, 40, 20),c2);
+        /*rock2->setObjectName(QStringLiteral("rock2"));
         rock2->setGeometry(QRect(260, 200, 40, 20));
         rock2->setPixmap(QPixmap(QString::fromUtf8("pages_p/rock_object.png")));
-        rock2->setScaledContents(true);
-        rock3 = new QLabel(LukeTrainPage);
-        rock3->setObjectName(QStringLiteral("rock3"));
+        rock2->setScaledContents(true);*/
+        std::vector<QObject*> c3={rock1,rock2,rockBase};
+        rock3 = new RockObject(LukeTrainPage,QStringLiteral("rock3"),QRect(320, 200, 40, 20),c3);
+        /*rock3->setObjectName(QStringLiteral("rock3"));
         rock3->setGeometry(QRect(320, 200, 40, 20));
         rock3->setPixmap(QPixmap(QString::fromUtf8("pages_p/rock_object.png")));
-        rock3->setScaledContents(true);
+        rock3->setScaledContents(true);*/
         text2 = new QLabel(LukeTrainPage);
         text2->setObjectName(QStringLiteral("text2"));
         text2->setGeometry(QRect(0, 370, 701, 61));

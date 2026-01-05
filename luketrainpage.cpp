@@ -3,17 +3,13 @@
 #include <QMouseEvent>
 #include <QEvent>
 #include <QDebug>
-#include <QTimer>
+#include "rockobject.h"
 LukeTrainPage::LukeTrainPage(QWidget *parent,MainWindow *mainwindow) : Page(parent,mainwindow),ui(new Ui::LukeTrainPage)
 {
     ui->setupUi(this);
     ui->rock1->installEventFilter(this);
     ui->rock2->installEventFilter(this);
     ui->rock3->installEventFilter(this);
-    QTimer *timer = new QTimer(this);
-    connect(timer, &QTimer::timeout, this, &LukeTrainPage::updateRockPos);
-
-    timer->start(16);
     if(!effects.initializeMouse(mainWindow))
         qDebug() << "No haptic mouse plugged in!";
 
@@ -41,12 +37,13 @@ bool LukeTrainPage::eventFilter(QObject *watched, QEvent *event){
         if (mouseEvent->button() == Qt::LeftButton) {
             isDragging=true;
             changeLukePose("./pages_p/luke_force.png");
+
             offset=mainWindow->pos()+QPoint(40,60);
             effects.pushProject("gravity.ifr","Compound",true);
             soundPlayer.setMedia(QUrl("./pages_p/rock_levitate.wav"));
             soundPlayer.play();
             setCursor(Qt::BlankCursor);
-            changeRockSprite((QLabel*)watched,"./pages_p/rock_object_drag.png");
+            ((RockObject *)watched)->setDragged(true);
 
         }
     }
@@ -58,7 +55,7 @@ bool LukeTrainPage::eventFilter(QObject *watched, QEvent *event){
             soundPlayer.stop();
             tryFinishPage();
             setCursor(Qt::ArrowCursor);
-            changeRockSprite((QLabel*)watched,"./pages_p/rock_object.png");
+            ((RockObject *)watched)->setDragged(false);
         }
     }
 
@@ -73,9 +70,11 @@ bool LukeTrainPage::eventFilter(QObject *watched, QEvent *event){
         //translation du label cible
         ((QLabel*)watched)->move(pos.x(),pos.y());
         if(pos.x()>toleratedPos){
-            if(watched==ui->rock1 && !rocksPlaced[0]){rocksPlaced[0]=true;rocksFinalY[0]=cumulativeRocksY;cumulativeRocksY-=20;}
-            if(watched==ui->rock2 && !rocksPlaced[1]){rocksPlaced[1]=true;rocksFinalY[1]=cumulativeRocksY;cumulativeRocksY-=20;}
-            if(watched==ui->rock3 && !rocksPlaced[2]){rocksPlaced[2]=true;rocksFinalY[2]=cumulativeRocksY;cumulativeRocksY-=20;}
+            RockObject *rock=((RockObject*)watched);
+            if(!rock->getPlaced()){
+                rock->setFinalY((cumulativeRocksY-=20));
+                rock->setPlaced(true);
+            }
         }
     }
     return false;
@@ -92,7 +91,10 @@ void LukeTrainPage::changeRockSprite(QLabel *rock,const std::string &file)
     rock->setPixmap(QPixmap(QString::fromStdString(file)));
 }
 void LukeTrainPage::tryFinishPage(){
-    if(rocksPlaced[0] && rocksPlaced[1] && rocksPlaced[2]){
+    RockObject *rock1=((RockObject*)ui->rock1);
+    RockObject *rock2=((RockObject*)ui->rock2);
+    RockObject *rock3=((RockObject*)ui->rock3);
+    if(rock1->getPlaced() && rock2->getPlaced() && rock3->getPlaced()){
         soundPlayer.stop();//on stoppe un son s'il y en a
         soundPlayer.setMedia(QUrl("./pages_p/page_success.mp3"));
         soundPlayer.play();
@@ -102,25 +104,6 @@ void LukeTrainPage::tryFinishPage(){
     }
 }
 
-void LukeTrainPage::updateRockPos(){
-    if(!isDragging){
-        QPoint pos1=ui->rock1->pos()+QPoint(0,gravity);
-        ui->rock1->move(pos1.x(),std::min(determineGround(pos1.x(),0),pos1.y()));
-
-        QPoint pos2=ui->rock2->pos()+QPoint(0,gravity);
-        ui->rock2->move(pos2.x(),std::min(determineGround(pos2.x(),1),pos2.y()));
-
-        QPoint pos3=ui->rock3->pos()+QPoint(0,gravity);
-        ui->rock3->move(pos3.x(),std::min(determineGround(pos3.x(),2),pos3.y()));
-    }
-}
-
-
-int LukeTrainPage::determineGround(int posX,int id){
-    if(posX>toleratedPos){
-        return rocksFinalY[id];
-    }else return 200;
-}
 
 void LukeTrainPage::enableSound(){
 soundPlayer.setVolume(100);
