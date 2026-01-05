@@ -87,8 +87,11 @@ bool R2D2MudPage::eventFilter(QObject *watched, QEvent *event){
 alors on marque le page comme terminée*/
 void R2D2MudPage::tryFinishPage(){
     if(rightGap>=maxRightGap){
+        soundPlayer.stop();//on stoppe un son s'il y en a
+        soundPlayer.setMedia(QUrl("./pages_p/page_success.mp3"));
+        soundPlayer.play();
         ui->text->setText("Génial!");
-        ui->text2->setText("R2D2 a réussi à se sortir de la vase!Il va pouvoir rejoindre Luke et vous la page suivante.");
+        ui->text2->setText("R2D2 a réussi à se sortir de la vase! Il va pouvoir rejoindre Luke et vous la page suivante.");
         setPageFinished();
     }
 }

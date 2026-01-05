@@ -33,6 +33,7 @@ private:
     void changeLukePose(const std::string &file);
     void changeRockSprite(QLabel *rock,const std::string &file);
     int determineGround(int posX,int id);
+    void tryFinishPage();
     void updateRockPos();
     void unlock();
 };

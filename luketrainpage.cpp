@@ -50,11 +50,7 @@ bool LukeTrainPage::eventFilter(QObject *watched, QEvent *event){
             isDragging=false;
             effects.clearAllEffects();
             soundPlayer.stop();
-            if(rocksPlaced[0] && rocksPlaced[1] && rocksPlaced[2]){
-                ui->text1->setText("Bien joué!");
-                ui->text2->setText("Luke a terminé son entrainement,vous pouvez passer à la page suivante!");
-                setPageFinished();
-            }
+            tryFinishPage();
             setCursor(Qt::ArrowCursor);
             changeRockSprite((QLabel*)watched,"./pages_p/rock_object.png");
         }
@@ -89,6 +85,17 @@ void LukeTrainPage::changeRockSprite(QLabel *rock,const std::string &file)
 
     rock->setPixmap(QPixmap(QString::fromStdString(file)));
 }
+void LukeTrainPage::tryFinishPage(){
+    if(rocksPlaced[0] && rocksPlaced[1] && rocksPlaced[2]){
+        soundPlayer.stop();//on stoppe un son s'il y en a
+        soundPlayer.setMedia(QUrl("./pages_p/page_success.mp3"));
+        soundPlayer.play();
+        ui->text1->setText("Bien joué!");
+        ui->text2->setText("Luke a terminé son entrainement,vous pouvez passer à la page suivante!");
+        setPageFinished();
+    }
+}
+
 void LukeTrainPage::updateRockPos(){
     if(!isDragging){
         QPoint pos1=ui->rock1->pos()+QPoint(0,gravity);
