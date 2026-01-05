@@ -35,6 +35,7 @@ public:
     QWidget *pageContainer;
     QWidget *verticalLayoutWidget;
     QVBoxLayout *verticalLayout;
+    QPushButton *soundButton;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -62,6 +63,9 @@ public:
         font1.setBold(true);
         font1.setWeight(75);
         nextButtton->setFont(font1);
+        nextButtton->setAutoRepeat(false);
+        nextButtton->setAutoDefault(false);
+        nextButtton->setFlat(false);
         prevButton = new QPushButton(centralWidget);
         prevButton->setObjectName(QStringLiteral("prevButton"));
         prevButton->setEnabled(false);
@@ -79,6 +83,17 @@ public:
         verticalLayout->setContentsMargins(11, 11, 11, 11);
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
         verticalLayout->setContentsMargins(0, 0, 0, 0);
+        soundButton = new QPushButton(centralWidget);
+        soundButton->setObjectName(QStringLiteral("soundButton"));
+        soundButton->setGeometry(QRect(10, 470, 61, 51));
+        soundButton->setFont(font1);
+        QIcon icon;
+        icon.addFile(QStringLiteral("sound_on.png"), QSize(), QIcon::Normal, QIcon::Off);
+        soundButton->setIcon(icon);
+        soundButton->setIconSize(QSize(32, 32));
+        soundButton->setAutoRepeat(false);
+        soundButton->setAutoDefault(false);
+        soundButton->setFlat(false);
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
@@ -93,6 +108,10 @@ public:
 
         retranslateUi(MainWindow);
 
+        nextButtton->setDefault(false);
+        soundButton->setDefault(false);
+
+
         QMetaObject::connectSlotsByName(MainWindow);
     } // setupUi
 
@@ -102,6 +121,7 @@ public:
         pageLabel->setText(QApplication::translate("MainWindow", "Page 0/0", 0));
         nextButtton->setText(QApplication::translate("MainWindow", "\342\206\222", 0));
         prevButton->setText(QApplication::translate("MainWindow", "\342\206\220", 0));
+        soundButton->setText(QString());
     } // retranslateUi
 
 };

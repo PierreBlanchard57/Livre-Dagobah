@@ -9,6 +9,8 @@ class TitlePage : public Page {
     Q_OBJECT
 public:
     explicit TitlePage(QWidget *parent = nullptr);
+    void enableSound() override;
+    void disableSound()override;
 
 protected:
     void showEvent(QShowEvent *event) override;

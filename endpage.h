@@ -8,6 +8,8 @@ class EndPage : public Page {
     Q_OBJECT
 public:
     explicit EndPage(QWidget *parent = nullptr);
+    void enableSound() override;
+    void disableSound()override;
 
 private:
     Ui::EndPage *ui;

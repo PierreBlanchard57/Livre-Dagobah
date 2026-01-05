@@ -823,6 +823,22 @@ release\moc_luketrainpage.cpp: C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\QWid
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qtouchdevice.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\QObject \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\QEvent \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtMultimedia\QMediaPlayer \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtMultimedia\qmediaplayer.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtMultimedia\qmediaobject.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtMultimedia\qtmultimediadefs.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtMultimedia\qmultimedia.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtMultimedia\qmediacontent.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtMultimedia\qmediaresource.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtNetwork\qnetworkrequest.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\QSharedDataPointer \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\QString \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\QUrl \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\QVariant \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtMultimedia\qmediaenumdebug.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qmetaobject.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtMultimedia\qaudio.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtNetwork\qnetworkconfiguration.h \
 		..\page.h \
 		..\mainwindow.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\QMainWindow \
@@ -830,7 +846,6 @@ release\moc_luketrainpage.cpp: C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\QWid
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qtabwidget.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qicon.h \
 		ui_luketrainpage.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\QVariant \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\QAction \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qaction.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qactiongroup.h \
@@ -1495,6 +1510,22 @@ release\moc_r2d2mudpage.cpp: C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\QWidge
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qfiledevice.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qvector2d.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qtouchdevice.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtMultimedia\QMediaPlayer \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtMultimedia\qmediaplayer.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtMultimedia\qmediaobject.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtMultimedia\qtmultimediadefs.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtMultimedia\qmultimedia.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtMultimedia\qmediacontent.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtMultimedia\qmediaresource.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtNetwork\qnetworkrequest.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\QSharedDataPointer \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\QString \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\QUrl \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\QVariant \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtMultimedia\qmediaenumdebug.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qmetaobject.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtMultimedia\qaudio.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtNetwork\qnetworkconfiguration.h \
 		..\page.h \
 		..\mainwindow.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\QMainWindow \
@@ -1502,7 +1533,6 @@ release\moc_r2d2mudpage.cpp: C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\QWidge
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qtabwidget.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qicon.h \
 		ui_r2d2mudpage.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\QVariant \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\QAction \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qaction.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qactiongroup.h \
@@ -1532,6 +1562,17 @@ release\moc_r2d2mudpage.cpp: C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\QWidge
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qstyle.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qtabbar.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qrubberband.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\QLabel \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qlabel.h \
+		..\effectmanager.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\QObject \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\QWindow \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qwindow.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\QEvent \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\QMargins \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\QRect \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qsurface.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qsurfaceformat.h \
 		..\r2d2mudpage.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\bin\moc.exe
 	C:\Qt\Qt5.7.0\5.7\msvc2013\bin\moc.exe $(DEFINES) -D_MSC_VER=1800 -D_WIN32 -IC:/Qt/Qt5.7.0/5.7/msvc2013/mkspecs/win32-msvc2013 -IG:/Livre_Dagobah -I"C:/Program Files/Immersion Corporation/IFC23/inc" -IC:/Qt/Qt5.7.0/5.7/msvc2013/include -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtMultimedia -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtWidgets -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtGui -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtANGLE -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtNetwork -IC:/Qt/Qt5.7.0/5.7/msvc2013/include/QtCore -I. ..\r2d2mudpage.h -o release\moc_r2d2mudpage.cpp
@@ -2390,6 +2431,22 @@ release\luketrainpage.obj: ..\luketrainpage.cpp ../luketrainpage.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qtouchdevice.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\QObject \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\QEvent \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtMultimedia\QMediaPlayer \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtMultimedia\qmediaplayer.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtMultimedia\qmediaobject.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtMultimedia\qtmultimediadefs.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtMultimedia\qmultimedia.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtMultimedia\qmediacontent.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtMultimedia\qmediaresource.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtNetwork\qnetworkrequest.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\QSharedDataPointer \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\QString \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\QUrl \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\QVariant \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtMultimedia\qmediaenumdebug.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qmetaobject.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtMultimedia\qaudio.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtNetwork\qnetworkconfiguration.h \
 		../page.h \
 		../mainwindow.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\QMainWindow \
@@ -2397,7 +2454,6 @@ release\luketrainpage.obj: ..\luketrainpage.cpp ../luketrainpage.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qtabwidget.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qicon.h \
 		ui_luketrainpage.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\QVariant \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\QAction \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qaction.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qactiongroup.h \
@@ -3151,6 +3207,22 @@ release\r2d2mudpage.obj: ..\r2d2mudpage.cpp ../r2d2mudpage.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qfiledevice.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qvector2d.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qtouchdevice.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtMultimedia\QMediaPlayer \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtMultimedia\qmediaplayer.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtMultimedia\qmediaobject.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtMultimedia\qtmultimediadefs.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtMultimedia\qmultimedia.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtMultimedia\qmediacontent.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtMultimedia\qmediaresource.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtNetwork\qnetworkrequest.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\QSharedDataPointer \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\QString \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\QUrl \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\QVariant \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtMultimedia\qmediaenumdebug.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\qmetaobject.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtMultimedia\qaudio.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtNetwork\qnetworkconfiguration.h \
 		../page.h \
 		../mainwindow.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\QMainWindow \
@@ -3158,7 +3230,6 @@ release\r2d2mudpage.obj: ..\r2d2mudpage.cpp ../r2d2mudpage.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qtabwidget.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qicon.h \
 		ui_r2d2mudpage.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\QVariant \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\QAction \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qaction.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qactiongroup.h \
@@ -3187,7 +3258,20 @@ release\r2d2mudpage.obj: ..\r2d2mudpage.cpp ../r2d2mudpage.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qabstractslider.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qstyle.h \
 		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qtabbar.h \
-		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qrubberband.h
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qrubberband.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\QLabel \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtWidgets\qlabel.h \
+		../effectmanager.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\QObject \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\QWindow \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qwindow.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\QEvent \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\QMargins \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\QRect \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qsurface.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\qsurfaceformat.h \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtCore\QDebug \
+		C:\Qt\Qt5.7.0\5.7\msvc2013\include\QtGui\QMouseEvent
 
 release\moc_mainwindow.obj: release\moc_mainwindow.cpp 
 

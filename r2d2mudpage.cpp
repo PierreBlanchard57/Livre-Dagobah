@@ -95,4 +95,10 @@ void R2D2MudPage::tryFinishPage(){
         setPageFinished();
     }
 }
+void R2D2MudPage::enableSound(){
+//a completer
+}
+void R2D2MudPage::disableSound(){
+//a completer
+}
 

@@ -76,3 +76,8 @@ void MainWindow::on_nextButtton_clicked()
 }
 
 
+void MainWindow::on_soundButton_clicked()
+{
+soundEnabled=!soundEnabled;
+}
+bool MainWindow::getSoundEnabled(){ return soundEnabled;}

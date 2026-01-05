@@ -20,6 +20,8 @@ class YodaLiftPage : public Page
 
 public:
     explicit YodaLiftPage(QWidget *parent = 0, MainWindow *mainWindow = nullptr);
+    void enableSound() override;
+    void disableSound()override;
     ~YodaLiftPage();
 
 public slots:

@@ -11,6 +11,8 @@ class R2D2MudPage : public Page
     Q_OBJECT
 public:
     explicit R2D2MudPage(QWidget *parent = nullptr,MainWindow *mainwindow=nullptr);
+    void enableSound() override;
+    void disableSound()override;
 protected:
     void showEvent(QShowEvent *event) override;
     void hideEvent(QHideEvent *event) override;

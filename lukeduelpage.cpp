@@ -214,6 +214,12 @@ void LukeDuelPage::keyPressEvent(QKeyEvent* event)
 {
     showSuccess();
 }
+void LukeDuelPage::enableSound(){
+//a completer
+}
+void LukeDuelPage::disableSound(){
+//a completer
+}
 
 LukeDuelPage::~LukeDuelPage()
 {

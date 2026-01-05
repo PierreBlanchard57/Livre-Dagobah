@@ -13,6 +13,8 @@ class LukeTrainPage : public Page
     Q_OBJECT
 public:
     explicit LukeTrainPage(QWidget *parent = nullptr,MainWindow *mainwindow=nullptr);
+    void enableSound() override;
+    void disableSound()override;
 protected:
     void showEvent(QShowEvent *event) override;
     void hideEvent(QHideEvent *event) override;

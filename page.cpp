@@ -11,3 +11,6 @@ void Page::setPageFinished() {
     else qDebug()<< "Could not unlock next page: mainWindow is null!";
                              }
 bool Page::isPageFinished() const { return pageFinished; }
+
+void Page::enableSound(){}
+void Page::disableSound(){}

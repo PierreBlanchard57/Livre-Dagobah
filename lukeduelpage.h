@@ -20,6 +20,8 @@ class LukeDuelPage : public Page
 
 public:
     explicit LukeDuelPage(QWidget *parent = 0,MainWindow *mainwindow=nullptr);
+    void enableSound() override;
+    void disableSound()override;
     ~LukeDuelPage();
 
 public slots:

@@ -113,4 +113,10 @@ int LukeTrainPage::determineGround(int posX,int id){
         return rocksFinalY[id];
     }else return 200;
 }
+void LukeTrainPage::enableSound(){
+//a completer
+}
+void LukeTrainPage::disableSound(){
+//a completer
+}
 

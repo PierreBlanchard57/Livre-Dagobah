@@ -8,9 +8,12 @@ public:
 
 
     bool isPageFinished() const;
+    virtual void enableSound();
+    virtual void disableSound();
 protected:
     explicit Page(QWidget *parent = nullptr,MainWindow *mainWindow=nullptr);
     void setPageFinished();
+
     MainWindow *mainWindow;
 private:
 
