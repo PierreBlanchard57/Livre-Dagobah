@@ -20,6 +20,8 @@ LukeTrainPage::LukeTrainPage(QWidget *parent,MainWindow *mainwindow) : Page(pare
 }
 void LukeTrainPage::showEvent(QShowEvent *event)
 {
+    if(!mainWindow->getSoundEnabled())disableSound();
+    else enableSound();
     musicPlayer.setMedia(QUrl("./pages_p/train_music.wav"));
     musicPlayer.play();
 }
@@ -114,9 +116,11 @@ int LukeTrainPage::determineGround(int posX,int id){
     }else return 200;
 }
 void LukeTrainPage::enableSound(){
-//a completer
+soundPlayer.setVolume(100);
+musicPlayer.setVolume(100);
 }
 void LukeTrainPage::disableSound(){
-//a completer
+soundPlayer.setVolume(0);
+musicPlayer.setVolume(0);
 }
 

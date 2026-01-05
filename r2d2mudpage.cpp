@@ -25,6 +25,8 @@ R2D2MudPage::R2D2MudPage(QWidget *parent,MainWindow *mainwindow) : Page(parent,m
 }
 void R2D2MudPage::showEvent(QShowEvent *event)
 {
+    if(!mainWindow->getSoundEnabled())disableSound();
+    else enableSound();
     musicPlayer.setMedia(QUrl("./pages_p/mud_music.wav"));
     musicPlayer.play();
 }
@@ -96,9 +98,11 @@ void R2D2MudPage::tryFinishPage(){
     }
 }
 void R2D2MudPage::enableSound(){
-//a completer
+    soundPlayer.setVolume(100);
+    musicPlayer.setVolume(100);
 }
 void R2D2MudPage::disableSound(){
-//a completer
+    soundPlayer.setVolume(0);
+    musicPlayer.setVolume(0);
 }
 

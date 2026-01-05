@@ -1,9 +1,8 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include "page.h"
+#include"page.h"
 #include "titlepage.h"
 #include "lukeduelpage.h"
-#include "yodaliftpage.h"
 #include "luketrainpage.h"
 #include "r2d2mudpage.h"
 #include "endpage.h"
@@ -22,8 +21,8 @@ MainWindow::MainWindow(QWidget *parent) :
     //pages
     pages.push_back(new LukeTrainPage(ui->pageContainer,this));
     pages.push_back(new R2D2MudPage(ui->pageContainer,this));
+    pages.push_back(new TitlePage(ui->pageContainer));
     pages.push_back(new LukeDuelPage(ui->pageContainer,this));
-    pages.push_back(new YodaLiftPage(ui->pageContainer,this));
     pages.push_back(new TitlePage(ui->pageContainer));
 
 
@@ -58,18 +57,9 @@ void MainWindow::on_prevButton_clicked()
         ui->pageLabel->setText("Page "+QString::number(currentPage+1)+"/"+QString::number(pageNumber));
         pages[currentPage+1]->setVisible(false);
         pages[currentPage]->setVisible(true);
-        updatePageSoundState();
     }
-}
 
-void MainWindow::updatePageSoundState()
-{
-    if (soundEnabled)
-        pages[currentPage]->enableSound();
-    else
-        pages[currentPage]->disableSound();
 }
-
 void MainWindow::on_nextButtton_clicked()
 {
     if(pageNumber>currentPage-1 && pages[currentPage]->isPageFinished()){
@@ -80,16 +70,23 @@ void MainWindow::on_nextButtton_clicked()
         ui->pageLabel->setText("Page "+QString::number(currentPage+1)+"/"+QString::number(pageNumber));
         pages[currentPage-1]->setVisible(false);
         pages[currentPage]->setVisible(true);
-        updatePageSoundState();
-    }
+
+        }
+
 }
+
 
 void MainWindow::on_soundButton_clicked()
 {
     soundEnabled=!soundEnabled;
-    updatePageSoundState();
-    ui->soundButton->setIcon(soundEnabled?
-                                 QIcon("sound_on.png") : QIcon("sound_off.png"));
-}
+    if(soundEnabled){
+        pages[currentPage]->enableSound();
+        ui->soundButton->setIcon(QIcon("sound_on.png"));
+    }
+    else{
 
+        pages[currentPage]->disableSound();
+        ui->soundButton->setIcon(QIcon("sound_off.png"));
+    }
+}
 bool MainWindow::getSoundEnabled(){ return soundEnabled;}
