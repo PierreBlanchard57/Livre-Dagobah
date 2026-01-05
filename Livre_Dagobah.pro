@@ -22,7 +22,8 @@ SOURCES += main.cpp\
     qtebutton.cpp \
     yodaliftpage.cpp \
     effectmanager.cpp \
-    r2d2mudpage.cpp
+    r2d2mudpage.cpp \
+    rockobject.cpp
 
 HEADERS  += mainwindow.h \
     page.h \
@@ -33,7 +34,8 @@ HEADERS  += mainwindow.h \
     qtebutton.h \
     yodaliftpage.h \
     effectmanager.h \
-    r2d2mudpage.h
+    r2d2mudpage.h \
+    rockobject.h
 
 FORMS    += mainwindow.ui \
     titlepage.ui \

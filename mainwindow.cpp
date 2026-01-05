@@ -110,7 +110,7 @@ void MainWindow::on_exitButton_clicked()
                 );
 
     if (reply == QMessageBox::Yes) {
-        QApplication::quit();
+        this->close();
     }
 }
 
@@ -127,6 +127,6 @@ void MainWindow::on_resetButton_clicked()
 
     if (reply == QMessageBox::Yes) {
         QProcess::startDetached(QCoreApplication::applicationFilePath());
-        QApplication::quit();
+        this->close();
     }
 }

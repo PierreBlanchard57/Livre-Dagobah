@@ -14,6 +14,6 @@ bool Page::isPageFinished() const { return pageFinished; }
 
 void Page::enableSound(){}
 void Page::disableSound(){}
-~Page(){
+Page::~Page(){
     delete mainWindow;
 }

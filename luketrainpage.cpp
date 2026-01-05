@@ -18,7 +18,7 @@ LukeTrainPage::LukeTrainPage(QWidget *parent,MainWindow *mainwindow) : Page(pare
         qDebug() << "No haptic mouse plugged in!";
 
 }
-~LukeTrainPage(){
+LukeTrainPage::~LukeTrainPage(){
 delete ui;
 }
 
@@ -114,11 +114,14 @@ void LukeTrainPage::updateRockPos(){
         ui->rock3->move(pos3.x(),std::min(determineGround(pos3.x(),2),pos3.y()));
     }
 }
+
+
 int LukeTrainPage::determineGround(int posX,int id){
     if(posX>toleratedPos){
         return rocksFinalY[id];
     }else return 200;
 }
+
 void LukeTrainPage::enableSound(){
 soundPlayer.setVolume(100);
 musicPlayer.setVolume(100);

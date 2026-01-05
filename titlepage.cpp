@@ -14,7 +14,7 @@ TitlePage::TitlePage(QWidget *parent) : Page(parent,nullptr),ui(new Ui::TitlePag
     }
 
 }
-~TitlePage(){
+TitlePage::~TitlePage(){
 delete ui;
 }
 

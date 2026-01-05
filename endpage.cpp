@@ -7,4 +7,4 @@ EndPage::EndPage(QWidget *parent) : Page(parent,nullptr),ui(new Ui::EndPage)
 }
 void EndPage::enableSound(){}
 void EndPage::disableSound(){}
-~EndPage(){delete ui;}
+EndPage::~EndPage(){delete ui;}
