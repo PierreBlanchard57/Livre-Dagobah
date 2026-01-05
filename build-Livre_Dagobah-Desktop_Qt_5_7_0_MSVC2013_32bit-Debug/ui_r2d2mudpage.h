@@ -26,6 +26,7 @@ public:
     QLabel *text;
     QLabel *r2d2;
     QLabel *swampFront;
+    QLabel *text2;
 
     void setupUi(QWidget *R2D2MudPage)
     {
@@ -39,11 +40,12 @@ public:
         swampBackground->setScaledContents(true);
         text = new QLabel(R2D2MudPage);
         text->setObjectName(QStringLiteral("text"));
-        text->setGeometry(QRect(0, 290, 701, 161));
+        text->setGeometry(QRect(0, 290, 701, 71));
         QFont font;
-        font.setPointSize(16);
-        font.setBold(true);
-        font.setWeight(75);
+        font.setFamily(QStringLiteral("Arial"));
+        font.setPointSize(12);
+        font.setBold(false);
+        font.setWeight(50);
         text->setFont(font);
         text->setStyleSheet(QStringLiteral("background-color: rgb(248, 255, 198);"));
         text->setWordWrap(true);
@@ -57,6 +59,12 @@ public:
         swampFront->setGeometry(QRect(0, 230, 700, 60));
         swampFront->setPixmap(QPixmap(QString::fromUtf8("pages_p/swamp_front.png")));
         swampFront->setScaledContents(true);
+        text2 = new QLabel(R2D2MudPage);
+        text2->setObjectName(QStringLiteral("text2"));
+        text2->setGeometry(QRect(0, 350, 701, 101));
+        text2->setFont(font);
+        text2->setStyleSheet(QStringLiteral("background-color: rgb(248, 255, 198);"));
+        text2->setWordWrap(true);
 
         retranslateUi(R2D2MudPage);
 
@@ -67,9 +75,10 @@ public:
     {
         R2D2MudPage->setWindowTitle(QApplication::translate("R2D2MudPage", "Form", 0));
         swampBackground->setText(QString());
-        text->setText(QApplication::translate("R2D2MudPage", "Pendant que Luke s'entrainait, R2D2 vadroullait dans les environs et a fini par se retrouver dans une situation d\303\251licate:Il s'est embourb\303\251 dans la vase!Il essaye de se d\303\251battre pour sortir et pour cela il a besoin que l'on maintienne un clic gauche sur lui et que l'on bouge la souris autour de lui (lat\303\251ralement).Peut \303\252tre qu'avec un peu de chance il r\303\251ussira \303\240 s'extiper de ce bourbier!", 0));
+        text->setText(QApplication::translate("R2D2MudPage", "Pendant que Luke s'entrainait, R2D2 vadroullait dans les environs et a fini par se retrouver dans une situation d\303\251licate:Il s'est embourb\303\251 dans la vase!", 0));
         r2d2->setText(QString());
         swampFront->setText(QString());
+        text2->setText(QApplication::translate("R2D2MudPage", "Il essaye de se d\303\251battre pour sortir et pour cela il a besoin que l'on maintienne un clic gauche sur lui et que l'on bouge la souris autour de lui (lat\303\251ralement).Peut \303\252tre qu'avec un peu de chance il r\303\251ussira \303\240 s'extiper de ce bourbier", 0));
     } // retranslateUi
 
 };

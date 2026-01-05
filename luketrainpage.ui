@@ -70,20 +70,21 @@
     <bool>true</bool>
    </property>
   </widget>
-  <widget class="QLabel" name="label_2">
+  <widget class="QLabel" name="text1">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>300</y>
      <width>701</width>
-     <height>151</height>
+     <height>71</height>
     </rect>
    </property>
    <property name="font">
     <font>
+     <family>Arial</family>
      <pointsize>12</pointsize>
-     <weight>75</weight>
-     <bold>true</bold>
+     <weight>50</weight>
+     <bold>false</bold>
     </font>
    </property>
    <property name="autoFillBackground">
@@ -93,7 +94,7 @@
     <string notr="true">background-color: rgb(254, 255, 194);</string>
    </property>
    <property name="text">
-    <string>Luke commence son entraînement avec Yoda. Il doit déplacer trois rochers blancs à l’aide de la Force et les empiler sur le rocher noir. Pour utiliser la Force, Luke doit cliquer sur un rocher blanc avec le bouton gauche de la souris, puis maintenir le clic enfoncé tout en déplaçant la souris. Il pourra relâcher le clic pour arrêter l’utilisation de la Force.</string>
+    <string>Luke commence son entraînement avec Yoda. Il doit déplacer trois rochers blancs à l’aide de la Force et les empiler sur le rocher noir. </string>
    </property>
    <property name="textFormat">
     <enum>Qt::RichText</enum>
@@ -156,6 +157,39 @@
     <pixmap>pages_p/rock_object.png</pixmap>
    </property>
    <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="text2">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>370</y>
+     <width>701</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Arial</family>
+     <pointsize>12</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(254, 255, 194);</string>
+   </property>
+   <property name="text">
+    <string>Pour utiliser la Force, Luke doit cliquer sur un rocher blanc avec le bouton gauche de la souris, puis maintenir le clic enfoncé tout en déplaçant la souris. Il pourra relâcher le clic pour arrêter l’utilisation de la Force.</string>
+   </property>
+   <property name="textFormat">
+    <enum>Qt::RichText</enum>
+   </property>
+   <property name="wordWrap">
     <bool>true</bool>
    </property>
   </widget>

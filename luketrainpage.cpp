@@ -51,6 +51,8 @@ bool LukeTrainPage::eventFilter(QObject *watched, QEvent *event){
             effects.clearAllEffects();
             soundPlayer.stop();
             if(rocksPlaced[0] && rocksPlaced[1] && rocksPlaced[2]){
+                ui->text1->setText("Bien joué!");
+                ui->text2->setText("Luke a terminé son entrainement,vous pouvez passer à la page suivante!");
                 setPageFinished();
             }
             setCursor(Qt::ArrowCursor);
