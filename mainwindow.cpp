@@ -9,6 +9,8 @@
 #include <qlayout.h>
 #include <iostream>
 #include <QDebug>
+#include <QMessageBox>
+#include <QProcess>
 
 int currentPage=0;
 const int pageNumber=6;
@@ -29,24 +31,26 @@ MainWindow::MainWindow(QWidget *parent) :
     pages.push_back(new EndPage(ui->pageContainer));
 
     for (int i = 0; i < pages.size(); ++i) {
-       pages[i]->setVisible(i == 0);
+        pages[i]->setVisible(i == 0);
     }
     //maj du label de pages
     ui->pageLabel->setText("Page 1/"+QString::number(pageNumber));
 
 }
+//methode pour débloquer le bouton suivant
 void MainWindow::unlockNextPage(){
-   ui->nextButtton->setEnabled(true);
+    ui->nextButtton->setEnabled(true);
 }
-
+//destructeur
 MainWindow::~MainWindow()
 {
     for (int i = 0; i < pages.size(); ++i) {
-       delete pages[i];
+        delete pages[i];
     }
     delete ui;
 }
 
+//code du bouton precedent
 void MainWindow::on_prevButton_clicked()
 {
     if(currentPage>0){
@@ -60,6 +64,7 @@ void MainWindow::on_prevButton_clicked()
     }
 
 }
+//code du bouton suivant
 void MainWindow::on_nextButtton_clicked()
 {
     if(pageNumber>currentPage-1 && pages[currentPage]->isPageFinished()){
@@ -71,11 +76,11 @@ void MainWindow::on_nextButtton_clicked()
         pages[currentPage-1]->setVisible(false);
         pages[currentPage]->setVisible(true);
 
-        }
+    }
 
 }
 
-
+//code du bouton de son
 void MainWindow::on_soundButton_clicked()
 {
     soundEnabled=!soundEnabled;
@@ -89,4 +94,39 @@ void MainWindow::on_soundButton_clicked()
         ui->soundButton->setIcon(QIcon("sound_off.png"));
     }
 }
+//getter de soundEnabled
 bool MainWindow::getSoundEnabled(){ return soundEnabled;}
+
+//code du bouton pour quitter,au clic on affiche une modale de confirmaation
+void MainWindow::on_exitButton_clicked()
+{
+
+    QMessageBox::StandardButton reply;
+    reply = QMessageBox::question(
+                this,
+                "Confirmation",
+                "Voulez-vous quitter le livre ?",
+                QMessageBox::Yes | QMessageBox::No
+                );
+
+    if (reply == QMessageBox::Yes) {
+        QApplication::quit();
+    }
+}
+
+//code du bouton pour reset l'appli,au clic on affiche une modale de confirmaation
+void MainWindow::on_resetButton_clicked()
+{
+    QMessageBox::StandardButton reply;
+    reply = QMessageBox::question(
+                this,
+                "Confirmation",
+                "Voulez-vous recommencer depuis le début ?",
+                QMessageBox::Yes | QMessageBox::No
+                );
+
+    if (reply == QMessageBox::Yes) {
+        QProcess::startDetached(QCoreApplication::applicationFilePath());
+        QApplication::quit();
+    }
+}

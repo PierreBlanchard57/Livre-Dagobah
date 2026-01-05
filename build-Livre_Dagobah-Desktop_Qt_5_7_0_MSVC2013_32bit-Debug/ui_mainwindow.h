@@ -36,6 +36,8 @@ public:
     QWidget *verticalLayoutWidget;
     QVBoxLayout *verticalLayout;
     QPushButton *soundButton;
+    QPushButton *exitButton;
+    QPushButton *resetButton;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -85,7 +87,7 @@ public:
         verticalLayout->setContentsMargins(0, 0, 0, 0);
         soundButton = new QPushButton(centralWidget);
         soundButton->setObjectName(QStringLiteral("soundButton"));
-        soundButton->setGeometry(QRect(10, 470, 61, 51));
+        soundButton->setGeometry(QRect(180, 470, 61, 51));
         soundButton->setFont(font1);
         QIcon icon;
         icon.addFile(QStringLiteral("sound_on.png"), QSize(), QIcon::Normal, QIcon::Off);
@@ -94,6 +96,28 @@ public:
         soundButton->setAutoRepeat(false);
         soundButton->setAutoDefault(false);
         soundButton->setFlat(false);
+        exitButton = new QPushButton(centralWidget);
+        exitButton->setObjectName(QStringLiteral("exitButton"));
+        exitButton->setGeometry(QRect(10, 470, 61, 51));
+        exitButton->setFont(font1);
+        QIcon icon1;
+        icon1.addFile(QStringLiteral("door.png"), QSize(), QIcon::Normal, QIcon::Off);
+        exitButton->setIcon(icon1);
+        exitButton->setIconSize(QSize(32, 32));
+        exitButton->setAutoRepeat(false);
+        exitButton->setAutoDefault(false);
+        exitButton->setFlat(false);
+        resetButton = new QPushButton(centralWidget);
+        resetButton->setObjectName(QStringLiteral("resetButton"));
+        resetButton->setGeometry(QRect(90, 470, 61, 51));
+        resetButton->setFont(font1);
+        QIcon icon2;
+        icon2.addFile(QStringLiteral("reset.png"), QSize(), QIcon::Normal, QIcon::Off);
+        resetButton->setIcon(icon2);
+        resetButton->setIconSize(QSize(32, 32));
+        resetButton->setAutoRepeat(false);
+        resetButton->setAutoDefault(false);
+        resetButton->setFlat(false);
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
@@ -110,6 +134,8 @@ public:
 
         nextButtton->setDefault(false);
         soundButton->setDefault(false);
+        exitButton->setDefault(false);
+        resetButton->setDefault(false);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -122,6 +148,8 @@ public:
         nextButtton->setText(QApplication::translate("MainWindow", "\342\206\222", 0));
         prevButton->setText(QApplication::translate("MainWindow", "\342\206\220", 0));
         soundButton->setText(QString());
+        exitButton->setText(QString());
+        resetButton->setText(QString());
     } // retranslateUi
 
 };
