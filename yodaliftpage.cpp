@@ -194,11 +194,15 @@ void YodaLiftPage::showGameState()
     hasClickedOnce = false;
     placeTimedButton();
 }
-void YodaLiftPage::enableSound(){
-//a completer
+
+void YodaLiftPage::enableSound()
+{
+    audioPlayer.setVolume(100);
 }
-void YodaLiftPage::disableSound(){
-//a completer
+
+void YodaLiftPage::disableSound()
+{
+    audioPlayer.setVolume(0);
 }
 
 YodaLiftPage::~YodaLiftPage()

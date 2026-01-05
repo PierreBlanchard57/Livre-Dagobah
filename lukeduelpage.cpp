@@ -214,11 +214,17 @@ void LukeDuelPage::keyPressEvent(QKeyEvent* event)
 {
     showSuccess();
 }
-void LukeDuelPage::enableSound(){
-//a completer
+
+void LukeDuelPage::enableSound()
+{
+    audioPlayer.setVolume(100);
+    sfxPlayer.setVolume(100);
 }
-void LukeDuelPage::disableSound(){
-//a completer
+
+void LukeDuelPage::disableSound()
+{
+    audioPlayer.setVolume(0);
+    sfxPlayer.setVolume(0);
 }
 
 LukeDuelPage::~LukeDuelPage()
