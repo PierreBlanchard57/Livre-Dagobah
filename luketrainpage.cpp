@@ -18,6 +18,10 @@ LukeTrainPage::LukeTrainPage(QWidget *parent,MainWindow *mainwindow) : Page(pare
         qDebug() << "No haptic mouse plugged in!";
 
 }
+~LukeTrainPage(){
+delete ui;
+}
+
 void LukeTrainPage::showEvent(QShowEvent *event)
 {
     if(!mainWindow->getSoundEnabled())disableSound();

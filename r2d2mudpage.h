@@ -13,6 +13,7 @@ public:
     explicit R2D2MudPage(QWidget *parent = nullptr,MainWindow *mainwindow=nullptr);
     void enableSound() override;
     void disableSound()override;
+    ~R2D2MudPage();
 protected:
     void showEvent(QShowEvent *event) override;
     void hideEvent(QHideEvent *event) override;

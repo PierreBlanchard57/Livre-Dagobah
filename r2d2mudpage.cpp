@@ -23,6 +23,10 @@ R2D2MudPage::R2D2MudPage(QWidget *parent,MainWindow *mainwindow) : Page(parent,m
     double percent=(double)((maxLeftGap-leftGap)/gapGrowthBySide)/200;
     ui->r2d2->installEventFilter(this);
 }
+~R2D2MudPage(){
+delete ui;
+}
+
 void R2D2MudPage::showEvent(QShowEvent *event)
 {
     if(!mainWindow->getSoundEnabled())disableSound();

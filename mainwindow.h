@@ -13,7 +13,7 @@ class MainWindow : public QMainWindow
 
 public:
     explicit MainWindow(QWidget *parent = 0);
-    ~MainWindow();
+     ~MainWindow();
     void unlockNextPage();
     bool getSoundEnabled();
 
@@ -31,6 +31,7 @@ private slots:
 private:
     Ui::MainWindow *ui;
     bool soundEnabled=true;
+
 };
 
 #endif // MAINWINDOW_H

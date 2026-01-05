@@ -11,6 +11,7 @@ public:
     explicit TitlePage(QWidget *parent = nullptr);
     void enableSound() override;
     void disableSound()override;
+    ~TitlePage();
 
 protected:
     void showEvent(QShowEvent *event) override;

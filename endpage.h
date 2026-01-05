@@ -10,6 +10,7 @@ public:
     explicit EndPage(QWidget *parent = nullptr);
     void enableSound() override;
     void disableSound()override;
+    ~EndPage();
 
 private:
     Ui::EndPage *ui;

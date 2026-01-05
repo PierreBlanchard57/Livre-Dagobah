@@ -14,6 +14,9 @@ TitlePage::TitlePage(QWidget *parent) : Page(parent,nullptr),ui(new Ui::TitlePag
     }
 
 }
+~TitlePage(){
+delete ui;
+}
 
 void TitlePage::showEvent(QShowEvent *event)
 {
