@@ -6,21 +6,21 @@
 #define LEFT 0
 #define RIGHT 1
 int midX;//la position en X du milieu de R2D2,servant de repère gauche/droite
-const int maxLeftGap=105;//
-const int maxRightGap=105;
-const int gapGrowthBySide=5;
-int leftGap=5;
-int rightGap=5;
-int elevationBySide=1;
-int stretchDirection=LEFT;
-bool isDragging=false;
-QPoint lastMousePos;
+const int maxLeftGap=105;//l'ecart max de gauche
+const int maxRightGap=105;//l'ecart max de droite
+const int gapGrowthBySide=5;//ecart lors du deplacement de la souris dans un des 2 cotés
+int leftGap=5;//ecart courant coté gauche
+int rightGap=5;//ecart courant coté droit
+int elevationBySide=1;//quantité de mouvement vertical de R2D2 lors du mouvement de la souris vers un bors gauche ou droit
+int stretchDirection=LEFT;//direction courant vers laquelle il faut bouger la souris pour creuser l'écart (alterne à chaque fois)
+bool isDragging=false;//la souris est elle en train de drag R2D2?
+QPoint lastMousePos;//derniere position connue de la souris
 
 R2D2MudPage::R2D2MudPage(QWidget *parent,MainWindow *mainwindow) : Page(parent,mainwindow),ui(new Ui::R2D2MudPage)
 {
     ui->setupUi(this);
     midX=ui->r2d2->mapToGlobal(QPoint(ui->r2d2->width()/2, ui->r2d2->height()/2)).x();
-    double percent=(double)((maxLeftGap-leftGap)/gapGrowthBySide)/200;
+    //on installe un filtre d'evenement sur R2D2
     ui->r2d2->installEventFilter(this);
 }
 R2D2MudPage::~R2D2MudPage(){
@@ -29,6 +29,7 @@ delete ui;
 
 void R2D2MudPage::showEvent(QShowEvent *event)
 {
+    //on demande au mainwindow si le son est activé et on agit en consequence
     if(!mainWindow->getSoundEnabled())disableSound();
     else enableSound();
     musicPlayer.setMedia(QUrl("./pages_p/mud_music.wav"));
