@@ -34,6 +34,7 @@ void R2D2MudPage::showEvent(QShowEvent *event)
     else enableSound();
     musicPlayer.setMedia(QUrl("./pages_p/mud_music.wav"));
     musicPlayer.play();
+    soundPlayer.setMedia(QUrl("./pages_p/mud_move.wav"));
 }
 
 void R2D2MudPage::hideEvent(QHideEvent *event)
@@ -48,7 +49,7 @@ bool R2D2MudPage::eventFilter(QObject *watched, QEvent *event){
             isDragging=true;
             lastMousePos=ui->r2d2->parentWidget()->mapFromGlobal(mouseEvent->globalPos());
             effects.pushProject("mud.ifr","Compound",false);
-            setCursor(Qt::BlankCursor);
+            setCursor(Qt::CrossCursor);
         }
     }
     if(event->type()==QEvent::MouseButtonRelease){
@@ -70,8 +71,10 @@ bool R2D2MudPage::eventFilter(QObject *watched, QEvent *event){
                     //on élève r2d2
                     ui->r2d2->move(ui->r2d2->pos()+QPoint(0, -elevationBySide));
 
-                    soundPlayer.setMedia(QUrl("./pages_p/mud_move.wav"));
-                    soundPlayer.play();
+
+                    if (soundPlayer.state() != QMediaPlayer::PlayingState) {
+                        soundPlayer.play();
+                    }
                     tryFinishPage();
                 }
             }
@@ -82,8 +85,10 @@ bool R2D2MudPage::eventFilter(QObject *watched, QEvent *event){
                     //on élève r2d2
                     ui->r2d2->move(ui->r2d2->pos()+QPoint(0,-elevationBySide));
 
-                    soundPlayer.setMedia(QUrl("./pages_p/mud_move.wav"));
-                    soundPlayer.play();
+
+                    if (soundPlayer.state() != QMediaPlayer::PlayingState) {
+                        soundPlayer.play();
+                    }
                     tryFinishPage();
                 }
             }
