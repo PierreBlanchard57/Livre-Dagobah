@@ -15,17 +15,17 @@ public:
     explicit MainWindow(QWidget *parent = 0);
      ~MainWindow();
     void unlockNextPage();
-    bool getSoundEnabled();
+    bool getSoundEnabled() { return soundEnabled; }
+    void updatePageSoundState();
+
+protected:
+    void closeEvent(QCloseEvent *event) override;
 
 private slots:
     void on_nextButtton_clicked();
-
     void on_prevButton_clicked();
-
     void on_soundButton_clicked();
-
     void on_exitButton_clicked();
-
     void on_resetButton_clicked();
 
 private:
