@@ -67,7 +67,9 @@ bool R2D2MudPage::eventFilter(QObject *watched, QEvent *event){
                 if(diffX<0 && currentX<midX-leftGap){
                     rightGap=std::min(maxRightGap,rightGap+gapGrowthBySide);
                     stretchDirection=RIGHT;
+                    //on élève r2d2
                     ui->r2d2->move(ui->r2d2->pos()+QPoint(0, -elevationBySide));
+
                     soundPlayer.setMedia(QUrl("./pages_p/mud_move.wav"));
                     soundPlayer.play();
                     tryFinishPage();
@@ -77,7 +79,9 @@ bool R2D2MudPage::eventFilter(QObject *watched, QEvent *event){
                 if(diffX>0 && currentX>midX+rightGap){
                     leftGap=std::min(maxLeftGap,leftGap+gapGrowthBySide);
                     stretchDirection=LEFT;
+                    //on élève r2d2
                     ui->r2d2->move(ui->r2d2->pos()+QPoint(0,-elevationBySide));
+
                     soundPlayer.setMedia(QUrl("./pages_p/mud_move.wav"));
                     soundPlayer.play();
                     tryFinishPage();
