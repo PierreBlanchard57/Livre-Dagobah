@@ -14,12 +14,12 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = 0);
      ~MainWindow();
-    void unlockNextPage();
-    bool getSoundEnabled() { return soundEnabled; }
-    void updatePageSoundState();
+    void unlockNextPage();//débloque le bouton suivant (accès à la page suivante)
+    bool getSoundEnabled() { return soundEnabled; }//getter de soundEnabled
+    void updatePageSoundState();//met à jour l'état du son des pages
 
 protected:
-    void closeEvent(QCloseEvent *event) override;
+    void closeEvent(QCloseEvent *event) override;//evenement de fermeture de l'application
 
 private slots:
     void on_nextButtton_clicked();
@@ -30,7 +30,7 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
-    bool soundEnabled=true;
+    bool soundEnabled=true;//etat du son (on ou off)
 
 };
 

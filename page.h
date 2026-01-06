@@ -7,16 +7,16 @@ class Page : public QWidget {
 public:
 
 
-    bool isPageFinished() const;
-    virtual void enableSound();
-    virtual void disableSound();
+    bool isPageFinished() const;//getter de pageFinished
+    virtual void enableSound();//activer le don de la page
+    virtual void disableSound();//desactiver le son de la page
     virtual ~Page();
 protected:
     explicit Page(QWidget *parent = nullptr,MainWindow *mainWindow=nullptr);
-    void setPageFinished();
-    bool pageFinished = false;
+    void setPageFinished();//setter de pageFinished
+    bool pageFinished = false;//etat fini/en cours de la page
 
-    MainWindow *mainWindow;
+    MainWindow *mainWindow;//pointeur sur l'objet mainwindow de l'application pour pouvoir lui demander des choses sur l'ui principale
 
 
 };

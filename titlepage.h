@@ -14,12 +14,12 @@ public:
     ~TitlePage();
 
 protected:
-    void showEvent(QShowEvent *event) override;
-    void hideEvent(QHideEvent *event) override;
+    void showEvent(QShowEvent *event) override;//evenement d'affichage de la page
+    void hideEvent(QHideEvent *event) override;//evenement de cache de la page
 
 private:
     Ui::TitlePage *ui;
 
-    QMediaPlayer musicPlayer;
-    QMediaPlaylist audioList;
+    QMediaPlayer musicPlayer;//mediaplayer pour la musique
+    QMediaPlaylist audioList;//mediaplaylist pour fonctionner avec le mediaplayer
 };

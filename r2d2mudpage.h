@@ -15,15 +15,15 @@ public:
     void disableSound()override;
     ~R2D2MudPage();
 protected:
-    void showEvent(QShowEvent *event) override;
-    void hideEvent(QHideEvent *event) override;
+    void showEvent(QShowEvent *event) override;//evenement d'affichage de la page
+    void hideEvent(QHideEvent *event) override;//evenement de cache de la page
 private:
     Ui::R2D2MudPage *ui;
-    EffectManager effects;
-    QMediaPlayer musicPlayer;
-    QMediaPlayer soundPlayer;
-    bool eventFilter(QObject *watched, QEvent *event);
-    void tryFinishPage();
+    EffectManager effects;//gestionnaire d'effets haptiques
+    QMediaPlayer musicPlayer;//mediaplayer pour la musique
+    QMediaPlayer soundPlayer;//mediaplayer pour le son
+    bool eventFilter(QObject *watched, QEvent *event);//filtre d'evenements
+    void tryFinishPage();//tenter de terminer la page en testant les conditions nécessaires
 };
 
 #endif // R2D2MUDPAGE_H
