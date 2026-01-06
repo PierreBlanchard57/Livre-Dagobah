@@ -128,6 +128,7 @@ bool LukeDuelPage::placeTimedButton()
 
     const int xOffset = 120;
     const int yOffset = 70;
+    const int bDim = 80;
 
     // placement du bouton de jeu (1200ms + N*ms) le temps se raccourcit au fur et à mesure des clics.
     currentButton = new QTEButton(1200 + (numSuccessfulStrikes * 100), ui->movieLabel);
@@ -135,15 +136,15 @@ bool LukeDuelPage::placeTimedButton()
     switch (lastStrikeDirection) {
         case 0:
             // à gauche
-            currentButton->setGeometry(xOffset, ui->movieLabel->height() - yOffset, 64, 64);
+            currentButton->setGeometry(xOffset, ui->movieLabel->height() - yOffset, bDim, bDim);
         break;
         case 1:
             // en haut
-            currentButton->setGeometry(ui->movieLabel->width()>>1, yOffset, 64, 64);
+            currentButton->setGeometry(ui->movieLabel->width()>>1, yOffset, bDim, bDim);
         break;
         case 2:
             // à droite
-            currentButton->setGeometry(ui->movieLabel->width() - xOffset, ui->movieLabel->height() - (yOffset + 20), 64, 64);
+            currentButton->setGeometry(ui->movieLabel->width() - xOffset, ui->movieLabel->height() - (yOffset + 20), bDim, bDim);
         break;
     }
     currentButton->show();
