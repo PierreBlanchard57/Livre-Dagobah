@@ -14,11 +14,10 @@ public:
 protected:
     explicit Page(QWidget *parent = nullptr,MainWindow *mainWindow=nullptr);
     void setPageFinished();
-
+    bool pageFinished = false;
 
     MainWindow *mainWindow;
-private:
 
-    bool pageFinished = false;
+
 };
 #endif // PAGE_H

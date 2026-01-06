@@ -91,17 +91,20 @@ void LukeTrainPage::changeRockSprite(QLabel *rock,const std::string &file)
     rock->setPixmap(QPixmap(QString::fromStdString(file)));
 }
 void LukeTrainPage::tryFinishPage(){
-    RockObject *rock1=((RockObject*)ui->rock1);
-    RockObject *rock2=((RockObject*)ui->rock2);
-    RockObject *rock3=((RockObject*)ui->rock3);
-    if(rock1->getPlaced() && rock2->getPlaced() && rock3->getPlaced()){
-        soundPlayer.stop();//on stoppe un son s'il y en a
-        soundPlayer.setMedia(QUrl("./pages_p/page_success.mp3"));
-        soundPlayer.play();
-        ui->text1->setText("Bien joué!");
-        ui->text2->setText("Luke a terminé son entrainement,vous pouvez passer à la page suivante!");
-        setPageFinished();
+    if(!pageFinished){
+        RockObject *rock1=((RockObject*)ui->rock1);
+        RockObject *rock2=((RockObject*)ui->rock2);
+        RockObject *rock3=((RockObject*)ui->rock3);
+        if(rock1->getPlaced() && rock2->getPlaced() && rock3->getPlaced()){
+            soundPlayer.stop();//on stoppe un son s'il y en a
+            soundPlayer.setMedia(QUrl("./pages_p/page_success.mp3"));
+            soundPlayer.play();
+            ui->text1->setText("Bien joué!");
+            ui->text2->setText("Luke a terminé son entrainement,vous pouvez passer à la page suivante!");
+            setPageFinished();
+        }
     }
+
 }
 
 
