@@ -77,7 +77,7 @@ void LukeDuelPage::frameHook(int nframe)
             effects.pushProject(PAGE_EFFECT_SHOCKWAVE, false);
 
         if (nframe == 90) // Le sabre de Luke s'illumine
-            effects.pushProject(PAGE_EFFECT_SABER, false);
+            effects.pushProject(PAGE_EFFECT_SABER, "Buzz", false);
     }
     else if (movie.fileName() == "./pages_m/duel_finish.gif") {
         if (nframe == 50) { // Le heaume explose
@@ -203,7 +203,7 @@ void LukeDuelPage::showFail()
             // redémarrage du jeu
             showGameState();
             // il faut redémarrer le sabre aussi
-            effects.pushProject(PAGE_EFFECT_SABER, false);
+            effects.pushProject(PAGE_EFFECT_SABER, "Buzz", false);
         });
     });
 
